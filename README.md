@@ -11,7 +11,7 @@ Most of the solutions here are inspired by public resources like [NeetCode](http
 ## Approach
 - Try to solve each problem by myself before searching for help
 - Use public resources like [NeetCode](https://www.youtube.com/@NeetCode) to learn new concepts and the most efficient ways to solve each problem
-- Reapply the new knowledge inspired by their approaches to write the optimal solution in my own words
+- Reapply the new knowledge gained from their approaches to write the optimal solution in my own words
 
 ## Disclaimer
 1. I do not claim ownership of the problems, algorithms, and logical ideas behind the solutions in this repository.
