@@ -57,3 +57,36 @@ Following this pattern we will reach,
 7 → 49 → 97 → 130 → 10 → <u>**1**</u>
 
 Here, we can see that the sequence eventually reaches 1 as we continue calculating the sum of the squares of each digit of every number. Thus, the original number, 7, is **happy**.
+
+## Possible Considerations
+
+If an original number is a happy number because its sequence leads to a 1, we can also conclude that all following numbers leading up to the 1 is also a happy number. 
+
+Take this sequence as an example:
+
+31 → 10 → 1 
+
+Since the sequence ends in a 1 and does not loop infinitely, the original number, 31, is a happy number. But what about the other numbers in the sequence? 
+
+1 will always result in a 1 when squared, so it is also a happy number.
+
+10 → 1
+
+10 can also be considered a happy number because its sequence also ends in a 1, even when it is not part of another sequence.
+
+Take a longer sequence as another example:
+
+19 → 82 → 68 → 100 → 1
+
+If we write out the sequences of all the individual numbers from the main sequence:
+
+82 → 68 → 100 → 1
+
+68 → 100 → 1
+
+100 → 1
+
+The sequences for the numbers do not change when we evaluate each number individually. We can say that all the numbers in this sequence are happy because the sequences of all individual numbers part of this sequence will end in a 1. 
+
+Following this distinction, we can conclude that if the original number is unhappy, all the numbers in its sequence will share the same trait. This is called a transitive relationship. 
+
