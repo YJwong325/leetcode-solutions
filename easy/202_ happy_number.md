@@ -95,9 +95,13 @@ We can use this fact to make the solution more efficient through a process calle
 ### Memoization
 Memoization is a process of caching values that have results that are already determined and simply returns the same result if the same values are encountered at a later stage. We can use memoization for the current problem by storing all the numbers in the sequence in an array when the original number is determined to be happy. If the same number is encountered again, we will just return True if the number is inside the cache array. This saves computer resources and immediately returns a result without having to compute the entire sequence of a number again and again repeatedly. 
 
+However, in order for memoization to be effective in this LeetCode question, the array has to be made global and shared between multiple test cases. This change trades some memory for increased time efficiency. 
+
+I understand that this is an unusual use for the memoization and caching technique because it is usually used when a single test case involves multiple instances of the same function call or number. I still think it is worth considering and a creative way to practice applying the memoization technique outside of its conventional applications.
+
 ### Same digits
 To make the solution even better, we could consider using the transitive relationship for numbers consisting of the same digits as the numbers inside the sequences. 
 
 19 → 82 → 68 → 100 → 1
 
-Here, 82 is considered a happy number as well due to a transitive relationship with the original number. We can also say the same for 28 because the sum of the squares of their digits will result in 68, which will also eventually lead to 1.
+Here, 82 is considered a happy number as well due to a transitive relationship with the original number. We can also say the same for 28 because the sum of the squares of their digits will result in 68, which will eventually lead to 1 in both cases.
