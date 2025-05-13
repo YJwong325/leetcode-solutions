@@ -88,5 +88,16 @@ If we write out the sequences of all the individual numbers from the main sequen
 
 The sequences for the numbers do not change when we evaluate each number individually. We can say that all the numbers in this sequence are happy because the sequences of all individual numbers part of this sequence will end in a 1. 
 
-Following this distinction, we can conclude that if the original number is unhappy, all the numbers in its sequence will share the same trait. This is called a transitive relationship. 
+Following this distinction, we can conclude that if the original number is unhappy, all the numbers in its sequence will share the same trait. This is called a **transitive relationship**. 
 
+We can use this fact to make the solution more efficient through a process called **memoization**.
+
+### Memoization
+Memoization is a process of caching values that have results that are already determined and simply returns the same result if the same values are encountered at a later stage. We can use memoization for the current problem by storing all the numbers in the sequence in an array when the original number is determined to be happy. If the same number is encountered again, we will just return True if the number is inside the cache array. This saves computer resources and immediately returns a result without having to compute the entire sequence of a number again and again repeatedly. 
+
+### Same digits
+To make the solution even better, we could consider using the transitive relationship for numbers consisting of the same digits as the numbers inside the sequences. 
+
+19 → 82 → 68 → 100 → 1
+
+Here, 82 is considered a happy number as well due to a transitive relationship with the original number. We can also say the same for 28 because the sum of the squares of their digits will result in 68, which will also eventually lead to 1.
