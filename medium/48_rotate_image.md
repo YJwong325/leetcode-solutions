@@ -13,7 +13,7 @@ For example:
 
 $$
 \begin{array}{c}
-\textit{Original matrix} \\
+\textit{Original} \\
 \left[\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
@@ -57,7 +57,7 @@ This can be done in 2 steps by swapping the last column with the first and then 
 
 1 2 3 4 → 4 2 3 1 → 4 3 2 1
 
-This reflects the entire matrix about a center vertical line, which effectively reverses the columns of the matrix. Using this on the earlier matrix will result in a final matrix that is equivalent to rotating the original matrix 90 degrees clockwise.
+This reflects the entire matrix about a center vertical line, which effectively reverses the columns of the matrix. Using this on the earlier matrix will result in a **final** matrix that is equivalent to rotating the **original** matrix **90 degrees clockwise**.
 
 $$
 \begin{array}{ccc}
@@ -82,7 +82,7 @@ Thus,
 
 $$
 \begin{array}{ccc}
-\textit{Original matrix} & & \textit{Final matrix} \\
+\textit{Original} & & \textit{Final} \\
 \left[\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
