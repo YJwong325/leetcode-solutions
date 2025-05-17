@@ -21,19 +21,19 @@ $$
 
 This is a matrix with the main diagonal filled with the value 'D'. To get the transpose of this matrix, we need to switch the numbers in the strictly upper triangular part of the matrix (A, B, C) with the numbers in the strictly lower triangular part of the matrix (X, Y, Z). Specifically, we need to switch the numbers with their counterparts that are reflected about the main diagonal (X is a counterpart of A and so on).
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 D & A & B \\
 X & D & C \\
 Y & Z & D
 \end{bmatrix}
-
 \quad \longrightarrow \quad
-
 \begin{bmatrix}
 D & X & Y \\
 A & D & Z \\
 B & C & D
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 ### Reflection
 
@@ -51,25 +51,26 @@ This can be done in 2 steps by swapping the last column with the first and then 
 
 This reflects the entire matrix about a center vertical line, which effectively reverses the columns of the matrix. Using this on the earlier matrix will result in a final matrix that is equivalent to rotating the original matrix 90 degrees clockwise.
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 D & X & Y \\
 A & D & Z \\
 B & C & D
 \end{bmatrix}
-
 \quad \longrightarrow \quad
-
 \begin{bmatrix}
 Y & X & D \\
 Z & D & A \\
 D & C & B
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Thus,
 
-$$\text{Original matrix} \quad \longrightarrow \quad \text{Final matrix} \quad \;$$
+$$\text{Original matrix} \quad \longrightarrow \quad \text{Final matrix\phantom{trii}}$$
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 D & A & B \\
 X & D & C \\
 Y & Z & D
@@ -79,7 +80,8 @@ Y & Z & D
 Y & X & D \\
 Z & D & A \\
 D & C & B
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 ## Example 1:
 
