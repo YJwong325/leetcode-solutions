@@ -67,7 +67,7 @@ $$
 
 Thus,
 
-$$\text{Original matrix} \quad \longrightarrow \quad \text{Final matrix\phantom{trii}}$$
+$$\text{Original matrix} \quad \longrightarrow \quad \text{Final matrix}$$
 
 $$
 \begin{bmatrix}
