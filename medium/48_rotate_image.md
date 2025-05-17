@@ -12,27 +12,35 @@ The transpose of a matrix is obtained by swapping numbers in the strictly upper 
 For example:
 
 $$
-\begin{bmatrix}
+\begin{array}{c}
+\textit{Original matrix} \\
+\left[\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{bmatrix}
+\end{array}\right]
+\end{array}
 $$
 
 This is a matrix with the main diagonal filled with the value 'D'. To get the transpose of this matrix, we need to switch the numbers in the strictly upper triangular part of the matrix (A, B, C) with the numbers in the strictly lower triangular part of the matrix (X, Y, Z). Specifically, we need to switch the numbers with their counterparts that are reflected about the main diagonal (X is a counterpart of A and so on).
 
 $$
-\begin{bmatrix}
+\begin{array}{ccc}
+& \textit{Transpose} & \\
+\left[\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{bmatrix}
-\quad \longrightarrow \quad
-\begin{bmatrix}
+\end{array}\right]
+&
+\longrightarrow
+&
+\left[\begin{array}{ccc}
 D & X & Y \\
 A & D & Z \\
 B & C & D
-\end{bmatrix}
+\end{array}\right]
+\end{array}
 $$
 
 ### Reflection
@@ -52,35 +60,43 @@ This can be done in 2 steps by swapping the last column with the first and then 
 This reflects the entire matrix about a center vertical line, which effectively reverses the columns of the matrix. Using this on the earlier matrix will result in a final matrix that is equivalent to rotating the original matrix 90 degrees clockwise.
 
 $$
-\begin{bmatrix}
+\begin{array}{ccc}
+& \textit{Reflect} & \\
+\left[\begin{array}{ccc}
 D & X & Y \\
 A & D & Z \\
 B & C & D
-\end{bmatrix}
-\quad \longrightarrow \quad
-\begin{bmatrix}
+\end{array}\right]
+&
+\longrightarrow
+&
+\left[\begin{array}{ccc}
 Y & X & D \\
 Z & D & A \\
 D & C & B
-\end{bmatrix}
+\end{array}\right]
+\end{array}
 $$
 
 Thus,
 
-$$\text{Original matrix} \quad \longrightarrow \quad \text{Final matrix}$$
-
 $$
-\begin{bmatrix}
+\begin{array}{ccc}
+\textit{Original matrix} & & \textit{Final matrix} \\
+\left[\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{bmatrix}
-\quad \longrightarrow \quad
-\begin{bmatrix}
+\end{array}\right]
+&
+\longrightarrow
+&
+\left[\begin{array}{ccc}
 Y & X & D \\
 Z & D & A \\
 D & C & B
-\end{bmatrix}
+\end{array}\right]
+\end{array}
 $$
 
 ## Example 1:
