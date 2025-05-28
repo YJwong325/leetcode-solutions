@@ -110,6 +110,24 @@ $$
 
 ## Example 1:
 
+Let the prices array be
+
+$$
+\large
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+4 & 7 & 8 & 3 & 2 & 1 & 2 & 6 \\
+\hline 
+\end{array}
+$$
+
+\begin{tabular}{}
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+6 & 2 & 3 & 
+\end{tabular}
+
 ## Example 2:
 
 ## Possible Considerations
