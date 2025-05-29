@@ -117,16 +117,20 @@ $$
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 4 & 7 & 8 & 3 & 2 & 1 & 2 & 6 \\
-\hline 
+\hline
+\uparrow & & & & & & & \\ 
 \end{array}
 $$
 
-\begin{tabular}{}
-\end{tabular}
-
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-6 & 2 & 3 & 
-\end{tabular}
+$$
+\large
+\begin{array}{cccccccccc|}
+\textbf{[} \mkern-15mu & \underline{4}, \mkern-5mu & \underline{7}, \mkern-5mu & 8, & 3, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} \\
+& \uparrow & \uparrow & & & & & & & \\
+& \textit{l} & \textit{r} & & & & & & & 
+\end{array}
+\quad \text{profit = 3}
+$$
 
 ## Example 2:
 
