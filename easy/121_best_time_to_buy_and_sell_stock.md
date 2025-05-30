@@ -8,100 +8,100 @@ We will find the maximum profit using the sliding window technique. A sliding wi
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & \underline{4}, & \underline{7}, & 8, & 3, & 2, & 1, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& \uparrow & \uparrow & & & & & & & \\
-& \textit{l} & \textit{r} & & & & & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[} \mkern-15mu & \underline{4}, & \underline{7}, & 8, & 3, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& \uparrow & \uparrow & & & & & & & & \\
+& \textit{l} & \textit{r} & & & & & & & & 
 \end{array}
 \quad \text{profit = 3}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & \underline{4}, & 7, & \underline{8}, & 3, & 2, & 1, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& \uparrow & & \uparrow & & & & & & \\
-& \textit{l} & & \textit{r} & & & & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & \underline{4}, & 7, & \underline{8}, & 3, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& \uparrow & & \uparrow & & & & & & & \\
+& \textit{l} & & \textit{r} & & & & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & \underline{4}, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& \uparrow & & & \uparrow & & & & & \\
-& \textit{l} & & & \textit{r} & & & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & \underline{4}, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& \uparrow & & & \uparrow & & & & & & \\
+& \textit{l} & & & \textit{r} & & & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& & & & \uparrow & & & & & \\
-& & & & \textit{l, r} & & & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& & & & \uparrow & & & & & & \\
+& & & & \textit{l, r} & & & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & \underline{3}, & \underline{2}, & 1, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& & & & \uparrow & \uparrow & & & & \\
-& & & & \textit{l} & \textit{r} & & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & \underline{3}, & \underline{2}, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& & & & \uparrow & \uparrow & & & & & \\
+& & & & \textit{l} & \textit{r} & & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & 3, & \underline{2}, & 1, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& & & & & \uparrow & & & & \\
-& & & & & \textit{l, r} & & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & \underline{2}, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& & & & & \uparrow & & & & & \\
+& & & & & \textit{l, r} & & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & 3, & \underline{2}, & \underline{1}, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& & & & & \uparrow & \uparrow & & & \\
-& & & & & \textit{l} & \textit{r} & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & \underline{2}, & \underline{1}, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& & & & & \uparrow & \uparrow & & & & \\
+& & & & & \textit{l} & \textit{r} & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & 6 & \!\!\!\!\textbf{]} \\
-& & & & & & \uparrow & & & \\
-& & & & & & \textit{l, r} & & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+& & & & & & \uparrow & & & & \\
+& & & & & & \textit{l, r} & & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & 3, & 2, & \underline{1}, & \underline{2}, & 6 & \!\!\!\!\textbf{]} \\
-& & & & & & \uparrow & \uparrow & & \\
-& & & & & & \textit{l} & \textit{r} & & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & 2, & \underline{1}, & \underline{2}, & 6 & \mkern-15mu \textbf{]} & \\
+& & & & & & \uparrow & \uparrow & & & \\
+& & & & & & \textit{l} & \textit{r} & & & 
 \end{array}
 \quad \text{profit = 4}
 $$
 
 $$
 \large
-\begin{array}{cccccccccc|}
-\textbf{[}\!\!\!\!\!\! & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & \underline{6} & \!\!\!\!\textbf{]} \\
-& & & & & & \uparrow & & \uparrow & \\
-& & & & & & \textit{l} & & \textit{r} & 
+\begin{array}{ccccccccccc|}
+\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & \underline{6} & \mkern-15mu \textbf{]} & \\
+& & & & & & \uparrow & & \uparrow & & \\
+& & & & & & \textit{l} & & \textit{r} & & 
 \end{array}
 \quad \text{profit = 5}
 $$
@@ -112,25 +112,6 @@ $$
 
 Let the prices array be
 
-$$
-\large
-\begin{array}{|c|c|c|c|c|c|c|c|}
-\hline
-4 & 7 & 8 & 3 & 2 & 1 & 2 & 6 \\
-\hline
-\uparrow & & & & & & & \\ 
-\end{array}
-$$
-
-$$
-\large
-\begin{array}{cccccccccc|}
-\textbf{[} \mkern-15mu & \underline{4}, \mkern-5mu & \underline{7}, \mkern-5mu & 8, & 3, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} \\
-& \uparrow & \uparrow & & & & & & & \\
-& \textit{l} & \textit{r} & & & & & & & 
-\end{array}
-\quad \text{profit = 3}
-$$
 
 ## Example 2:
 
