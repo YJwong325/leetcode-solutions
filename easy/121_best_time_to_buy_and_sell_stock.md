@@ -9,7 +9,7 @@ We will find the maximum profit using the sliding window technique. A sliding wi
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[} \mkern-15mu & \underline{4}, & \underline{7}, & 8, & 3, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[} \mkern-5mm & \underline{4}, & \underline{7}, & 8, & 3, & 2, & 1, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & \uparrow & \uparrow & & & & & & & & \\
 & \textit{l} & \textit{r} & & & & & & & & 
 \end{array}
@@ -19,7 +19,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & \underline{4}, & 7, & \underline{8}, & 3, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & \underline{4}, & 7, & \underline{8}, & 3, & 2, & 1, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & \uparrow & & \uparrow & & & & & & & \\
 & \textit{l} & & \textit{r} & & & & & & & 
 \end{array}
@@ -29,7 +29,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & \underline{4}, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & \underline{4}, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & \uparrow & & & \uparrow & & & & & & \\
 & \textit{l} & & & \textit{r} & & & & & & 
 \end{array}
@@ -39,7 +39,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & \underline{3}, & 2, & 1, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & & & & \uparrow & & & & & & \\
 & & & & \textit{l, r} & & & & & & 
 \end{array}
@@ -49,7 +49,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & \underline{3}, & \underline{2}, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & \underline{3}, & \underline{2}, & 1, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & & & & \uparrow & \uparrow & & & & & \\
 & & & & \textit{l} & \textit{r} & & & & & 
 \end{array}
@@ -59,7 +59,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & \underline{2}, & 1, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & 3, & \underline{2}, & 1, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & & & & & \uparrow & & & & & \\
 & & & & & \textit{l, r} & & & & & 
 \end{array}
@@ -69,7 +69,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & \underline{2}, & \underline{1}, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & 3, & \underline{2}, & \underline{1}, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & & & & & \uparrow & \uparrow & & & & \\
 & & & & & \textit{l} & \textit{r} & & & & 
 \end{array}
@@ -79,7 +79,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & 6 & \mkern-5mm \textbf{]} & \\
 & & & & & & \uparrow & & & & \\
 & & & & & & \textit{l, r} & & & & 
 \end{array}
@@ -89,7 +89,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & 2, & \underline{1}, & \underline{2}, & 6 & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & 3, & 2, & \underline{1}, & \underline{2}, & 6 & \mkern-5mm \textbf{]} & \\
 & & & & & & \uparrow & \uparrow & & & \\
 & & & & & & \textit{l} & \textit{r} & & & 
 \end{array}
@@ -99,7 +99,7 @@ $$
 $$
 \large
 \begin{array}{ccccccccccc|}
-\textbf{[}\mkern-15mu & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & \underline{6} & \mkern-15mu \textbf{]} & \\
+\textbf{[}\mkern-5mm & 4, & 7, & 8, & 3, & 2, & \underline{1}, & 2, & \underline{6} & \mkern-5mm \textbf{]} & \\
 & & & & & & \uparrow & & \uparrow & & \\
 & & & & & & \textit{l} & & \textit{r} & & 
 \end{array}
