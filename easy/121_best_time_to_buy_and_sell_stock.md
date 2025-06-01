@@ -13,7 +13,7 @@ $$
 & \uparrow & \uparrow & & & & & & & & \\
 & \textit{l} & \textit{r} & & & & & & & & 
 \end{array}
-\quad \text{profit = 3}
+\quad \text{profit} = 3
 $$
 
 $$
@@ -23,7 +23,7 @@ $$
 & \uparrow & & \uparrow & & & & & & & \\
 & \textit{l} & & \textit{r} & & & & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -33,7 +33,7 @@ $$
 & \uparrow & & & \uparrow & & & & & & \\
 & \textit{l} & & & \textit{r} & & & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -43,7 +43,7 @@ $$
 & & & & \uparrow & & & & & & \\
 & & & & \textit{l, r} & & & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -53,7 +53,7 @@ $$
 & & & & \uparrow & \uparrow & & & & & \\
 & & & & \textit{l} & \textit{r} & & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -63,7 +63,7 @@ $$
 & & & & & \uparrow & & & & & \\
 & & & & & \textit{l, r} & & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -73,7 +73,7 @@ $$
 & & & & & \uparrow & \uparrow & & & & \\
 & & & & & \textit{l} & \textit{r} & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -83,7 +83,7 @@ $$
 & & & & & & \uparrow & & & & \\
 & & & & & & \textit{l, r} & & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -93,7 +93,7 @@ $$
 & & & & & & \uparrow & \uparrow & & & \\
 & & & & & & \textit{l} & \textit{r} & & & 
 \end{array}
-\quad \text{profit = 4}
+\quad \text{profit} = 4
 $$
 
 $$
@@ -103,10 +103,10 @@ $$
 & & & & & & \uparrow & & \uparrow & & \\
 & & & & & & \textit{l} & & \textit{r} & & 
 \end{array}
-\quad \text{profit = 5}
+\quad \text{profit} = 5
 $$
 
-![Example 2 Walkthrough GIF](../gifs/121_ex2.gif)
+![Example 2 Walkthrough GIF](../gifs/LC121_ex2.gif)
 
 ## Example 1:
 
