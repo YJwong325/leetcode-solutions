@@ -179,3 +179,21 @@ $$
 Thus, the **maximum profit** to be had here is **5**. Below is a GIF to help visualize the movement of the pointers.
 
 ![Example 2 Walkthrough GIF](../gifs/LC121_ex2.gif)
+
+## Code
+
+```python
+def maxProfit(self, prices):
+    l = 0
+    r = 1
+    profit = 0
+
+    while r < len(prices):
+        if prices[r] < prices[l]:
+            l = r
+        else:
+            profit = max(prices[r] - prices[l], profit)
+        r += 1
+
+    return profit
+```
