@@ -6,6 +6,59 @@
 
 We will find the maximum profit using the sliding window technique. A sliding window technique uses 2 pointers which move along the array at varying speeds and both pointers make a sub-array with elements between the two pointers. In order to get the maximum profit, we need to buy at the lowest price and sell at the highest. We will use the left pointer to point to the minimum price and the right to go through the array. If a new lower price is found by the right pointer, the left pointer will be shifted to the position of the right pointer. Otherwise, it would mean that the price at the right pointer is larger than the price at the left, which will generate a profit. However, we need a variable to keep track of the maximum profit we have calculated thus far to prevent a lower profit from overriding the maximum and ensure that we will maximize our profits. 
 
+
+## Example 1:
+
+Let the prices array be `[3, 7, 1, 9]`
+
+$$
+\large
+\begin{array}{ccccccc|}
+\textbf{[} & \underline{3}, & \underline{7}, & 1, & 9 & \textbf{]} & \\
+& \uparrow & \uparrow & & & & \\
+& \textit{l} & \textit{r} & & & & 
+\end{array}
+\quad \text{profit} = 4
+$$
+
+$$
+\large
+\begin{array}{ccccccc|}
+\textbf{[} & \underline{3}, & 7, & \underline{1}, & 9 & \textbf{]} & \\
+& \uparrow & & \uparrow & & & \\
+& \textit{l} & & \textit{r} & & & 
+\end{array}
+\quad \text{profit} = 4
+$$
+
+$$
+\large
+\begin{array}{ccccccc|}
+\textbf{[} & 3, & 7, & \underline{1}, & 9 & \textbf{]} & \\
+& & & \uparrow & & & \\
+& & & \textit{l, r} & & & 
+\end{array}
+\quad \text{profit} = 4
+$$
+
+$$
+\large
+\begin{array}{ccccccc|}
+\textbf{[} & 3, & 7, & \underline{1}, & \underline{9} & \textbf{]} & \\
+& & & \uparrow & \uparrow & & \\
+& & & \textit{l} & \textit{r} & & 
+\end{array}
+\quad \text{profit} = 8
+$$
+
+Thus, the **maximum profit** to be had here is **8**. Below is a GIF to help visualize the movement of the pointers.
+
+![Example 2 Walkthrough GIF](../gifs/LC121_ex1.gif)
+
+## Example 2:
+
+Let the prices array be `[4, 7, 8, 3, 2, 1, 2, 6]`
+
 $$
 \large
 \begin{array}{ccccccccccc|}
@@ -106,13 +159,6 @@ $$
 \quad \text{profit} = 5
 $$
 
+Thus the **maximum profit** to be had here is **5**. Below is a GIF to help visualize the movement of the pointers.
+
 ![Example 2 Walkthrough GIF](../gifs/LC121_ex2.gif)
-
-## Example 1:
-
-Let the prices array be
-
-
-## Example 2:
-
-## Possible Considerations
