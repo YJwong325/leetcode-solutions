@@ -36,6 +36,12 @@ class Solution(object):
                 list1 = lists[i]
                 list2 = lists[i + 1] if i + 1 < len(lists) else None
 
+                # also can be:
+                # if i + 1 < len(lists):
+                #     list2 = lists[i + 1]
+                # else:
+                #     list2 = None
+
                 newMerged.append(merge(list1, list2))
             lists = newMerged
         
