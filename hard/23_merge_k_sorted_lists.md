@@ -270,6 +270,71 @@ flowchart LR
     l2_ptr --> l2_node3
 ```
 
+Since list2 is now empty and pointing to None, we do not have anymore nodes to compare and we can just point to whatever node is left in list1 because the original linked lists are already sorted in ascending order.
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node3 --> l1_node4
+    l1_ptr --> l1_node3
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1 --> l2_node1 --> l1_node2 --> l2_node2 --> l1_node3
+    nl_nodePtr --> l2_node2
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node3
+    l2_ptr --> l2_node3
+```
+
+The resulting linked list will be sorted in ascending order and is returned using empty.next.
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node3 --> l1_node4
+
+    %% New list pointers
+
+    %% New list nodes
+
+    l1_node1 --> l2_node1 --> l1_node2 --> l2_node2 --> l1_node3
+
+    %% List 2 pointers
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+
+```
+
 ## Example 1:
 
 ## Example 2:
