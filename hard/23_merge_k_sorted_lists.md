@@ -4,7 +4,271 @@
 ## Approach
 The problem involves joining multiple linked lists into one huge linked list in ascending order. A solution we can use is a divide and conquer method to simplify the problem so that we can solve it one small part at a time. The approach involves merging 2 small linked lists at a time and joining them in ascending order. Once we are able to join 2 linked lists together, we would be able to eventually join all the linked lists given by the problem with multiple iterations.
 
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
 
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node1 --> l1_node2 --> l1_node3 --> l1_node4
+    l1_ptr --> l1_node1
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node1 --> l2_node2 --> l2_node3
+    l2_ptr --> l2_node1
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_nodePtr --> nl_head
+```
+
+Check list1.val and list2.val:
+
+list1.val = 1
+
+list2.val = 2
+
+since list1.val is smaller, it will be pointed to next.
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node1 --> l1_node2 --> l1_node3 --> l1_node4
+    l1_ptr --> l1_node1
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node1 --> l2_node2 --> l2_node3
+    l2_ptr --> l2_node1
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1
+    nl_nodePtr --> nl_head 
+```
+
+Then we update the list1 pointer to point to the next node in the list.
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node1 --> l1_node2 --> l1_node3 --> l1_node4
+    l1_ptr --> l1_node2
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node1 --> l2_node2 --> l2_node3
+    l2_ptr --> l2_node1
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1
+    nl_nodePtr --> l1_node1
+```
+
+Then we compare the values of list1.val and list2.val again.
+
+list1.val = 4
+
+list2.val = 2
+
+Since list2.val is smaller, it will be pointed to next
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node2 --> l1_node3 --> l1_node4
+    l1_ptr --> l1_node2
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node1 --> l2_node2 --> l2_node3
+    l2_ptr --> l2_node1
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1 --> l2_node1
+    nl_nodePtr --> l1_node1
+```
+
+Then we update the pointers again.
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node2 --> l1_node3 --> l1_node4
+    l1_ptr --> l1_node2
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node1 --> l2_node2 --> l2_node3
+    l2_ptr --> l2_node2
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1 --> l2_node1
+    nl_nodePtr --> l2_node1
+```
+
+We keep repeating this process of checking for the smaller value of the nodes currently being pointed to by the two list pointers, joining the node with the smaller value to the new list, and updating the pointers to prepare for the next node addition to the new list.
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node2 --> l1_node3 --> l1_node4
+    l1_ptr --> l1_node3
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1 --> l2_node1 --> l1_node2
+    nl_nodePtr --> l1_node2
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node2 --> l2_node3
+    l2_ptr --> l2_node2
+```
+
+```mermaid
+flowchart LR
+    %% List 1 pointers
+    l1_ptr((list1))
+    
+    %% List 1 nodes
+    l1_node1[1]
+    l1_node2[4]
+    l1_node3[7]
+    l1_node4[None]
+
+    l1_node3 --> l1_node4
+    l1_ptr --> l1_node3
+
+    %% New list pointers
+    nl_nodePtr((newList))
+
+    %% New list nodes
+    nl_head[empty]
+
+    nl_head --> l1_node1 --> l2_node1 --> l1_node2 --> l2_node2
+    nl_nodePtr --> l2_node2
+
+    %% List 2 pointers
+    l2_ptr((list2))
+
+    %% List 2 nodes
+    l2_node1[2]
+    l2_node2[5]
+    l2_node3[None]
+
+    l2_node2 --> l2_node3
+    l2_ptr --> l2_node3
+```
 
 ## Example 1:
 
@@ -45,7 +309,7 @@ def mergeKLists(self, lists):
             list1 = lists[i]
             list2 = lists[i + 1] if i + 1 < len(lists) else None
 
-            # also can be:
+            # the above can also be written as:
             # if i + 1 < len(lists):
             #     list2 = lists[i + 1]
             # else:
