@@ -4,6 +4,8 @@
 ## Approach
 The problem involves joining multiple linked lists into one huge linked list in ascending order. A solution we can use is a divide and conquer method to simplify the problem so that we can solve it one small part at a time. The approach involves merging 2 small linked lists at a time and joining them in ascending order. Once we are able to join 2 linked lists together, we would be able to eventually join all the linked lists given by the problem with multiple iterations.
 
+### Part 1: Joining 2 Linked Lists
+
 ```mermaid
 flowchart LR
     %% List 1 pointers
@@ -235,6 +237,8 @@ flowchart LR
     l2_ptr --> l2_node2
 ```
 
+We will keep adding nodes to the new list until one of the original linked lists run out of nodes with values.
+
 ```mermaid
 flowchart LR
     %% List 1 pointers
@@ -332,8 +336,55 @@ flowchart LR
     %% List 2 nodes
     l2_node1[2]
     l2_node2[5]
-
 ```
+
+We have successfully joined the two linked lists together and sorted them in ascending order of their values.
+
+### Part 2: Joining a List of Linked Lists
+
+Using the method of joining 2 linked lists together in Part 1, we can iterate through an array of linked lists, joining 2 at a time until we end up with 1 large linked list.
+
+Here we have a list of 5 linked lists:
+
+$$
+\left[
+\begin{array}{ccccc}
+l_1, & l_2, & l_3, & l_4, & l_5 \\
+\end{array}
+\right]
+$$
+
+After iterating through the list once and joining 2 linked list using the method in part 1, the array of linked lists would look something like this:
+
+$$
+\left[
+\begin{array}{ccc}
+l_1\_l_2, & l_3\_l_4, & l_5 \\
+\end{array}
+\right] 
+\\
+\text{\small $l_1\_l_2$ denotes $l_1$ merged with $l_2$}
+$$
+
+Iterating through the list for a second time will yield:
+
+$$
+\left[
+\begin{array}{cc}
+l_1\_l_2\_l_3\_l_4, & l_5 \\
+\end{array}
+\right] 
+$$
+
+A third and final iteration through the entire array produces the final linked list, with its nodes sorted in ascending order by using the method in part 1.
+
+$$
+\left[
+\begin{array}{c}
+l_1\_l_2\_l_3\_l_4\_l_5 \\
+\end{array}
+\right] 
+$$
 
 ## Example 1:
 
