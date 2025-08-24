@@ -366,7 +366,10 @@ $$
 l_1\_l_2, & l_3\_l_4, & l_5 \\
 \end{array}
 \right] 
-\text{$l_1\_l_2$ denotes $l_1$ merged with $l_2$}
+$$
+
+$$
+\small\text{$l_1\_l_2$ denotes $l_1$ merged with $l_2$}
 $$
 
 Iterating through the list for a second time will yield:
