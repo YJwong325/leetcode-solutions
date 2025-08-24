@@ -6,6 +6,8 @@ The problem involves joining multiple linked lists into one huge linked list in 
 
 ### Part 1: Joining 2 Linked Lists
 
+Here we have 2 linked lists as examples and we will try to merge their nodes together in ascending order.
+
 ```mermaid
 flowchart LR
     %% List 1 pointers
@@ -40,13 +42,15 @@ flowchart LR
     nl_nodePtr --> nl_head
 ```
 
-Check list1.val and list2.val:
+The circular nodes represent pointers that are pointing to specific nodes in the linked lists. These pointers can change the next pointer of the nodes they reference.
 
-list1.val = 1
+Since we want to merge the linked lists in ascending order, we will have to pick the lower value when deciding which node to add to the <u>new linked list? (change to merged linked list or what)</u>. Between the two starting nodes, we have the values:
 
-list2.val = 2
-
-since list1.val is smaller, it will be pointed to next.
+$$
+\texttt{list1.val = 1} \qquad | \qquad \texttt{list2.val = 2}
+$$
+ 
+Since list1.val is smaller, it will be added to the new linked list first.
 
 ```mermaid
 flowchart LR
@@ -83,7 +87,7 @@ flowchart LR
     nl_nodePtr --> nl_head 
 ```
 
-Then we update the list1 pointer to point to the next node in the list.
+Then we update the list1 pointer to point to the next node in its own list.
 
 ```mermaid
 flowchart LR
@@ -120,11 +124,11 @@ flowchart LR
     nl_nodePtr --> l1_node1
 ```
 
-Then we compare the values of list1.val and list2.val again.
+Now we compare the values of list1.val and list2.val again.
 
-list1.val = 4
-
-list2.val = 2
+$$
+\texttt{list1.val = 4} \qquad | \qquad \texttt{list2.val = 2}
+$$
 
 Since list2.val is smaller, it will be pointed to next
 
@@ -362,8 +366,7 @@ $$
 l_1\_l_2, & l_3\_l_4, & l_5 \\
 \end{array}
 \right] 
-\\
-\text{\small $l_1\_l_2$ denotes $l_1$ merged with $l_2$}
+\text{$l_1\_l_2$ denotes $l_1$ merged with $l_2$}
 $$
 
 Iterating through the list for a second time will yield:
