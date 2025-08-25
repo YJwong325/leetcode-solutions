@@ -351,21 +351,17 @@ Using the method of joining 2 linked lists together in Part 1, we can iterate th
 Here we have a list of 5 linked lists:
 
 $$
-\left[
 \begin{array}{ccccc}
-l_1, & l_2, & l_3, & l_4, & l_5 \\
+\large \textbf{[} \space \space \normalsize l_1, & l_2, & l_3, & l_4, & l_5 \large \space \space \textbf{]} \\
 \end{array}
-\right]
 $$
 
 After iterating through the list once and joining 2 linked list using the method in part 1, the array of linked lists would look something like this:
 
 $$
-\left[
 \begin{array}{ccc}
-l_1\_l_2, & l_3\_l_4, & l_5 \\
+\large \textbf{[} \space \space \normalsize l_1\_l_2, & l_3\_l_4, & l_5 \large \space \space \textbf{]} \\
 \end{array}
-\right] 
 $$
 
 $$
@@ -375,24 +371,55 @@ $$
 Iterating through the list for a second time will yield:
 
 $$
-\left[
 \begin{array}{cc}
-l_1\_l_2\_l_3\_l_4, & l_5 \\
+\large \textbf{[} \space \space \normalsize l_1\_l_2\_l_3\_l_4, & l_5 \large \space \space \textbf{]} \\
 \end{array}
-\right] 
 $$
 
 A third and final iteration through the entire array produces the final linked list, with its nodes sorted in ascending order by using the method in part 1.
 
 $$
-\left[
 \begin{array}{c}
-l_1\_l_2\_l_3\_l_4\_l_5 \\
+\large \textbf{[} \space \space \normalsize l_1\_l_2\_l_3\_l_4\_l_5 \large \space \space \textbf{]} \\
 \end{array}
-\right] 
 $$
 
 ## Example 1:
+
+Initial array of linked list:
+
+$$
+\begin{array}{cccccc}
+\Large\textbf{[} \space
+
+\normalsize
+\begin{array}{ccc}
+\large \textbf{[} \space \normalsize 13, & 42, & 7 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{c}
+\large \textbf{[} \space \normalsize 99 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cccc}
+\large \textbf{[} \space \normalsize 5, & 5, & 8, & 2 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{}
+\large \textbf{[} \space \space \textbf{]}
+\end{array},
+&
+\begin{array}{ccccc}
+\large \textbf{[} \space \normalsize 77, & 3, & 91, & 12, & 65 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cc}
+\large \textbf{[} \space \normalsize 8, & 14 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
 
 ## Example 2:
 
