@@ -21,3 +21,7 @@ Most of the solutions here are inspired by public resources like [NeetCode](http
 5. No part of this repository was copied from others. 
 
 This repo is simply an archive for me to share my progress and improve on my programming abilities in an organized way.
+
+---
+
+Link to my [LeetCode](https://leetcode.com/u/yjwong1911/) profile.
