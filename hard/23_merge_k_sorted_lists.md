@@ -124,7 +124,7 @@ flowchart LR
     nl_nodePtr --> l1_node1
 ```
 
-Now we compare the values of list1.val and list2.val again.
+Now we compare the current values of list1.val and list2.val again.
 
 $$
 \texttt{list1.val = 4} \qquad | \qquad \texttt{list2.val = 2}
@@ -390,11 +390,11 @@ Initial array of linked list:
 
 $$
 \begin{array}{cccccc}
-\Large\textbf{[} \space
+\Large \textbf{[} \space
 
 \normalsize
 \begin{array}{ccc}
-\large \textbf{[} \space \normalsize 13, & 42, & 7 \large \space \textbf{]}
+\large \textbf{[} \space \normalsize 7, & 13, & 42 \large \space \textbf{]}
 \end{array},
 &
 \begin{array}{c}
@@ -402,7 +402,7 @@ $$
 \end{array},
 &
 \begin{array}{cccc}
-\large \textbf{[} \space \normalsize 5, & 5, & 8, & 2 \large \space \textbf{]}
+\large \textbf{[} \space \normalsize 2, & 5, & 5, & 8 \large \space \textbf{]}
 \end{array},
 &
 \begin{array}{}
@@ -410,11 +410,68 @@ $$
 \end{array},
 &
 \begin{array}{ccccc}
-\large \textbf{[} \space \normalsize 77, & 3, & 91, & 12, & 65 \large \space \textbf{]}
+\large \textbf{[} \space \normalsize 3, & 12, & 65, & 77, & 91 \large \space \textbf{]}
 \end{array},
 &
 \begin{array}{cc}
 \large \textbf{[} \space \normalsize 8, & 14 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
+After the first iteration and using the merge() function we defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
+
+$$
+\begin{array}{ccc}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{cccc}
+\large \textbf{[} \space \normalsize 7, & 13, & 42, & 99 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cccc}
+\large \textbf{[} \space \normalsize 2, & 5, & 5, & 8 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{ccccccc}
+\large \textbf{[} \space \normalsize 3, & 8, & 12, & 14, & 65, & 77, & 91 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
+After the second iteration: 
+
+$$
+\begin{array}{cc}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{cccccccc}
+\large \textbf{[} \space \normalsize 2, & 5, & 5, & 7, & 8, & 13, & 42, & 99 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{ccccccc}
+\large \textbf{[} \space \normalsize 3, & 8, & 12, & 14, & 65, & 77, & 91 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
+The final iteration will yield the complete merged linked list with all values sorted in ascending order. 
+
+$$
+\begin{array}{c}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{ccccccccccccccc}
+\large \textbf{[} \space \normalsize 2, & 3, & 5, & 5, & 7, & 8, & 8, & 12, & 13, & 14, & 42, & 65, & 77, & 91, & 99 \large \space \textbf{]}
 \end{array}
 
 \Large \space \textbf{]}
@@ -427,7 +484,7 @@ $$
 ```python
 def mergeKLists(self, lists):
     # divide and conquer: divide the problem into 2 lists from many 
-    # lists to make it more manageable
+    #                     lists to make it more manageable
     def merge(list1, list2):
         empty = ListNode()
         newList = empty
