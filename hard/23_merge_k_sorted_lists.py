@@ -3,26 +3,48 @@ class ListNode(object):
         self.val = val
         self.next = next
 
+class LinkedList(object):
+    def __init__(self):
+        self.head = ListNode()
+        self.__cur = self.head
+
+    def append(self, data):
+        self.__cur.next = ListNode(data)
+        self.__cur = self.__cur.next
+    
+    def getList(self):
+        return self.head.next
+    
+    def display(self):
+        temp = self.head.next
+        print("[", end="")
+        while temp:
+            if temp.next:
+                print(f'{temp.val}, ', end="")
+            else:
+                print(f'{temp.val}]')
+            temp = temp.next
+
 class Solution(object):
     def mergeKLists(self, lists):
         # divide and conquer: divide the problem into 2 lists from many lists to make it more manageable
         def merge(list1, list2):
             empty = ListNode()
-            newList = empty
+            new_list = empty
 
             while list1 and list2:
                 if list1.val < list2.val:
-                    newList.next = list1
+                    new_list.next = list1
                     list1 = list1.next
                 else:
-                    newList.next = list2
+                    new_list.next = list2
                     list2 = list2.next
-                newList = newList.next
+                new_list = new_list.next
             
             if list1:
-                newList.next = list1
+                new_list.next = list1
             else:
-                newList.next = list2
+                new_list.next = list2
             
             return empty.next
 
@@ -30,7 +52,7 @@ class Solution(object):
             return None
         
         while len(lists) > 1:
-            newMerged = []
+            new_merged = []
 
             for i in range(0, len(lists), 2):
                 list1 = lists[i]
@@ -42,13 +64,19 @@ class Solution(object):
                 # else:
                 #     list2 = None
 
-                newMerged.append(merge(list1, list2))
-            lists = newMerged
+                new_merged.append(merge(list1, list2))
+            lists = new_merged
         
         return lists[0]
 
 array_1 = []
 
+list = LinkedList()
+list.append(7)
+list.append(13)
+list.append(42)
+
+array_1.append(list.getList())
 
 example_1 = Solution()
-example_1.mergeKLists()
+example_1.mergeKLists(array_1).display()
