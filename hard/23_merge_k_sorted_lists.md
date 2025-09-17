@@ -421,7 +421,7 @@ $$
 \end{array}
 $$
 
-After the first iteration and using the merge() function we defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
+After the first iteration and using the merge() function that was defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
 
 $$
 \begin{array}{ccc}
@@ -479,6 +479,99 @@ $$
 $$
 
 ## Example 2:
+
+Initial array of linked list:
+
+$$
+\begin{array}{ccccc}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{cccc}
+\large \textbf{[} \space \normalsize 5, & 8, & 12, & 19 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{ccc}
+\large \textbf{[} \space \normalsize 3, & 7, & 14 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{ccccc}
+\large \textbf{[} \space \normalsize 2, & 6, & 9, & 11, & 21 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cc}
+\large \textbf{[} \space \normalsize 4, & 18 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cccccc}
+\large \textbf{[} \space \normalsize 1, & 10, & 13, & 15, & 17, & 20 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
+After the first iteration using the merge() function:
+
+$$
+\begin{array}{ccc}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{ccccccc}
+\large \textbf{[} \space \normalsize 3, & 5, & 7, & 8, & 12, & 14, & 19 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{ccccccc}
+\large \textbf{[} \space \normalsize 2, & 4, & 6, & 9, & 11, & 18, & 21 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cccccc}
+\large \textbf{[} \space \normalsize 1, & 10, & 13, & 15, & 17, & 20 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
+After the second iteration we get:
+
+$$
+\begin{array}{cc}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{cccccccccccccc}
+\large \textbf{[} \space \normalsize 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 11, & 12, & 14, & 18, & 19, & 21 \large \space \textbf{]}
+\end{array},
+&
+\begin{array}{cccccc}
+\large \textbf{[} \space \normalsize 1, & 10, & 13, & 15, & 17, & 20 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
+Notice how the last linked list in the array remains unchanged. In the first and second iteration, the index of the last linked list was odd. 
+
+Considering the fact that the index of the first linked list in a pair will always be odd, if an odd index is found at the last element of the array, there will not be a second linked list to complete the merging pair. Thus, the last linked list in the array of this particular example was unchanged for 2 iterations before merging into the final linked list.
+
+After the third iteration, we will get the final linked list sorted in ascending order for example number 2.
+
+$$
+\begin{array}{c}
+\Large \textbf{[} \space
+
+\normalsize
+\begin{array}{cccccccccccccccccccc}
+\large \textbf{[} \space \normalsize 1, & 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 10, & 11, & 12, & 13, & 14, & 15, & 17, & 18, & 19, & 20, & 21 \large \space \textbf{]}
+\end{array}
+
+\Large \space \textbf{]}
+\end{array}
+$$
+
 
 ## Code
 ```python

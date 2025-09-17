@@ -47,3 +47,8 @@ class Solution(object):
         
         return lists[0]
 
+array_1 = []
+
+
+example_1 = Solution()
+example_1.mergeKLists()
