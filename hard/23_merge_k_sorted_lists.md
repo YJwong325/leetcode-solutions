@@ -34,7 +34,7 @@ flowchart LR
     l2_ptr --> l2_node1
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -78,7 +78,7 @@ flowchart LR
     l2_ptr --> l2_node1
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -115,7 +115,7 @@ flowchart LR
     l2_ptr --> l2_node1
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -158,7 +158,7 @@ flowchart LR
     l2_ptr --> l2_node1
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -195,7 +195,7 @@ flowchart LR
     l2_ptr --> l2_node2
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -221,7 +221,7 @@ flowchart LR
     l1_ptr --> l1_node3
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -258,7 +258,7 @@ flowchart LR
     l1_ptr --> l1_node3
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -295,7 +295,7 @@ flowchart LR
     l1_ptr --> l1_node3
 
     %% New list pointers
-    nl_nodePtr((newList))
+    nl_nodePtr((new_list))
 
     %% New list nodes
     nl_head[empty]
@@ -580,21 +580,21 @@ def mergeKLists(self, lists):
     #                     lists to make it more manageable
     def merge(list1, list2):
         empty = ListNode()
-        newList = empty
+        new_list = empty
 
         while list1 and list2:
             if list1.val < list2.val:
-                newList.next = list1
+                new_list.next = list1
                 list1 = list1.next
             else:
-                newList.next = list2
+                new_list.next = list2
                 list2 = list2.next
-            newList = newList.next
+            new_list = new_list.next
             
         if list1:
-            newList.next = list1
+            new_list.next = list1
         else:
-            newList.next = list2
+            new_list.next = list2
             
         return empty.next
 
@@ -602,7 +602,7 @@ def mergeKLists(self, lists):
         return None
         
     while len(lists) > 1:
-        newMerged = []
+        new_merged = []
 
         for i in range(0, len(lists), 2):
             list1 = lists[i]
@@ -614,9 +614,9 @@ def mergeKLists(self, lists):
             # else:
             #     list2 = None
 
-            newMerged.append(merge(list1, list2))
+            new_merged.append(merge(list1, list2))
 
-        lists = newMerged
+        lists = new_merged
         
     return lists[0]
 ```
