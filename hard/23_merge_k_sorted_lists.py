@@ -15,6 +15,10 @@ class LinkedList(object):
     
     def getList(self):
         return self.head.next
+    
+    def setEmpty(self):
+        self.head = ListNode()
+        self.__cur = self.head
 
 class Solution(object):
     def mergeKLists(self, lists):
@@ -70,6 +74,7 @@ def display(list):
                 print(f'{temp.val}]')
             temp = temp.next
 
+print("Example 1:")
 array_1 = []
 
 list = LinkedList()
@@ -78,7 +83,26 @@ list = LinkedList()
 # list.append(42)
 
 list.append([7, 13, 42])
+array_1.append(list.getList())
 
+list.setEmpty()
+list.append([99])
+array_1.append(list.getList())
+
+list.setEmpty()
+list.append([2, 5, 5, 8])
+array_1.append(list.getList())
+
+list.setEmpty()
+list.append([])
+array_1.append(list.getList())
+
+list.setEmpty()
+list.append([3, 12, 65, 77, 91])
+array_1.append(list.getList())
+
+list.setEmpty()
+list.append([8, 14])
 array_1.append(list.getList())
 
 example_1 = Solution()
