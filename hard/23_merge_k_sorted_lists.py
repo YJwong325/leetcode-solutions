@@ -64,17 +64,18 @@ class Solution(object):
         
         return lists[0]
 
-def display(list):
+def display(list, new_line=True):
         temp = list
         print("[", end="")
         while temp:
             if temp.next:
                 print(f'{temp.val}, ', end="")
             else:
-                print(f'{temp.val}]')
+                print(f'{temp.val}', end="")
             temp = temp.next
+        print("]") if new_line else print("]", end="")
 
-print("Example 1:")
+print("\nExample 1:")
 array_1 = []
 
 list = LinkedList()
@@ -105,5 +106,50 @@ list.setEmpty()
 list.append([8, 14])
 array_1.append(list.getList())
 
+print("Initial array of linked lists:")
+print("[", end="")
+for l in array_1:
+    display(l, False)
+    if l != array_1[-1]:
+        print(", ", end="")
+    else:
+        print("]")
+
 example_1 = Solution()
 display(example_1.mergeKLists(array_1))
+
+print("\nExample 2:")
+array_2 = []
+
+list.setEmpty()
+list.append([5, 8, 12, 19])
+array_2.append(list.getList())
+
+list.setEmpty()
+list.append([3, 7, 14])
+array_2.append(list.getList())
+
+list.setEmpty()
+list.append([2, 6, 9, 11, 21])
+array_2.append(list.getList())
+
+list.setEmpty()
+list.append([4, 18])
+array_2.append(list.getList())
+
+list.setEmpty()
+list.append([1, 10, 13, 15, 17, 20])
+array_2.append(list.getList())
+
+print("Initial array of linked lists:")
+print("[", end="")
+for l in array_2:
+    display(l, False)
+    if l != array_2[-1]:
+        print(", ", end="")
+    else:
+        print("]")
+
+example_2 = Solution()
+display(example_2.mergeKLists(array_2))
+print("")
