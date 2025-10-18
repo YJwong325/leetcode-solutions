@@ -621,5 +621,4 @@ def mergeKLists(self, lists):
     return lists[0]
 ```
 
-## Possible Considerations
 
