@@ -9,10 +9,24 @@ Binary search uses a left and right pointer, as well as a middle pointer that po
 ## Time Complexity
 Binary search has a time complexity of O(log n), which performs extremely fast with a large number of elements. 
 
-- search area is halved every iteration so if n is the search area:
-- n -> n/2 -> n/4 -> n/8 -> n/16 -> ...
-- so the pattern here is that the denominator is products of 2 and can be written as 2 raised to the power of k, 
-where k is 0, 1, 2, 3, ... after every respective iteration
+To calculate the time complexity of Binary Search, we need to determine the search area after every iteration. If we let `n` be the search area, we can effectively show the search area of the list of elements after every iteration. 
+
+$$
+\begin{array}{ccccccccccc}
+\large n & \rightarrow & \LARGE\frac{n}{2} & \rightarrow & \LARGE\frac{n}{4} & \rightarrow & \LARGE\frac{n}{8} & \rightarrow & \LARGE\frac{n}{16} & \rightarrow & ... \\
+i = 0 & & i = 1 & & i = 2 & & i = 3 & & i = 4
+\end{array}
+$$
+
+The denominators of the search area of each iteration is a product of 2 and can be written as 2 raised to the power of `k`, where `k` is `0, 1, 2, 3, ...` with respect to every iteration.
+
+$$
+\begin{array}{ccccccccccccc}
+\LARGE\frac{n}{2^0} & \rightarrow & \LARGE\frac{n}{2^1} & \rightarrow & \LARGE\frac{n}{2^2} & \rightarrow & \LARGE\frac{n}{2^3} & \rightarrow & \LARGE\frac{n}{2^4} & \rightarrow & ... & \rightarrow & \LARGE\frac{n}{2^k} \\
+i = 0 & & i = 1 & & i = 2 & & i = 3 & & i = 4 & & & & i = k
+\end{array}
+$$
+
 - and time complexity is calculated as the worst case scenario so we would need to calculate n/2^k = 1 because the target element will definitely be found when the search space is 1 because that means only 1 element is left
 - rearranging the equation yields us n = 2^k and taking the log of both sides yields log n = log 2^k. then we bring k down as a coefficient of the log gives log n = k log 2. and k will give us the number of iterations when it is the worst case scenario where the target is not found until the final element and the search space is 1, which also means k is the time complexity. solving for k gives us k = log n / log 2. since we ignore all constants for time complexity, log 2 is ignored giving us only log n which is the time complexity of binary search.
 
