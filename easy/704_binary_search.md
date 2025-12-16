@@ -7,9 +7,9 @@ Binary search is a process that involves halving the search space every iteratio
 Binary search uses a left and right pointer, as well as a middle pointer that points to the index of the element in between the left and right pointers. the middle pointer separates the list into 2 parts. Since the list is sorted, assuming it is sorted in ascending order, the smaller list to the right of the middle pointer will have values that are all be larger than the element pointed to by the middle pointer, and to the left will be all the elements that have a smaller value. In the case of a list sorted in descending order, the same concept applies in opposite order. All values to the right of the middle will be smaller than the middle and all values to the left will be larger. 
 
 ## Time Complexity
-Binary search has a time complexity of O(log n), which performs extremely fast with a large number of elements. 
+Binary search has a time complexity of $O(\log_{} {n})$, which performs extremely fast with a large number of elements. 
 
-To calculate the time complexity of Binary Search, we need to determine the search area after every iteration. If we let `n` be the search area, we can effectively show the search area of the list of elements after every iteration. 
+To calculate the time complexity of Binary Search, we need to determine the search area after every iteration. If we let $n$ be the search area, we can effectively show the search area of the list of elements after every iteration. 
 
 $$
 \begin{array}{ccccccccccc}
@@ -18,7 +18,7 @@ i = 0 & & i = 1 & & i = 2 & & i = 3 & & i = 4
 \end{array}
 $$
 
-The denominators of the search area of each iteration is a product of 2 and can be written as 2 raised to the power of `k`, where `k` is `0, 1, 2, 3, ...` with respect to every iteration.
+The denominators of the search area of each iteration is a product of 2 and can be written as 2 raised to the power of $k$, where $k$ is $0, 1, 2, 3, ...$ with respect to every iteration.
 
 $$
 \begin{array}{ccccccccccccc}
@@ -27,11 +27,47 @@ i = 0 & & i = 1 & & i = 2 & & i = 3 & & i = 4 & & & & i = k
 \end{array}
 $$
 
-- and time complexity is calculated as the worst case scenario so we would need to calculate n/2^k = 1 because the target element will definitely be found when the search space is 1 because that means only 1 element is left
-- rearranging the equation yields us n = 2^k and taking the log of both sides yields log n = log 2^k. then we bring k down as a coefficient of the log gives log n = k log 2. and k will give us the number of iterations when it is the worst case scenario where the target is not found until the final element and the search space is 1, which also means k is the time complexity. solving for k gives us k = log n / log 2. since we ignore all constants for time complexity, log 2 is ignored giving us only log n which is the time complexity of binary search.
+Since time complexity is calculated as the worst case scenario, we would need to let $\Large\frac{n}{2^k} \normalsize= 1$. When the search area reaches 1, there is only 1 element left in the list, which means the target element would definitely be found in the search area given that the target is in the list.
 
-## Possible Considerations
+$$
+\begin{array}{ccc}
+\LARGE\frac{n}{2^k} & = & 1 \\
+\large n & = & \large 2^k
+\end{array}
+$$
 
+Rearranging the equation gives us $n = 2^k$.
 
-Notes:
- - explain binary search time complexity calculation
+$$
+\begin{array}{ccc}
+\large \log_{10} n & = & \large\log_{10} {2^k}
+\end{array}
+$$
+
+We then take the log of both sides to bring $k$ down as a coefficient of the log on the right hand side of the equation.
+
+$$
+\begin{array}{ccc}
+\large \log_{10} n & = & \large{k}\log_{10} {2}
+\end{array}
+$$
+
+In this equation, $k$ will give us the number of iterations to get to the worst case scenario where the target is not found until the search area is 1, and $n$ represents the original search area of the list of elements when `i = 0`. Given the definition of $k$, it represents the time complexity of binary search. 
+
+$$
+\begin{array}{ccc}
+\large{k} & = & \frac{\large\log_{10} {n}}{\large\log_{10} {2}} 
+\end{array}
+$$
+
+Solving for $k$ gives us $k = \frac{\normalsize\log_{10} {n}}{\normalsize\log_{10} {2}}$. Since we ignore all constants for time complexity, all bases of the $log$ and $\log_{10} {2}$ are ignored, giving us only $\log_{} {n}$ as the **time complexity** of **Binary Search**.
+
+$$
+\begin{array}{ccc}
+\large O(\frac{\large\log_{10} {n}}{\large\log_{10} {2}}) & = & \large O(\log_{} {n})
+\end{array}
+$$
+
+$$
+\therefore \text{Time Complexity} = \large O(\log_{} {n})
+$$
