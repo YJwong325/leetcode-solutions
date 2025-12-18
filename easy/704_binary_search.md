@@ -9,8 +9,30 @@ Binary search uses a left and right pointer, as well as a middle pointer that po
 ## Example 1:
 
 $$
-\begin{array}{ccccccccccc|}
-\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} \quad
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} &
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+Given the above array, we will use binary search to find the target in the array. First, we need to initialize 2 pointers, l and r, at the beginning and end of the array respectively. 
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
+& \uparrow & & & & & & & & \uparrow \\
+& \textit{l} & & & & & & & & \textit{r}
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+Next, we determine the middle of the array by adding half the distance between the left and right pointers to the left pointer, using the formula `l + (r - l) // 2`. The left and right pointers hold the index of the elements they are pointing to.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
+& \uparrow & & & & \uparrow & & & & \uparrow \\
+& \textit{l} & & & & \textit{mid} & & & & \textit{r}
 \end{array}
 \quad \text{Target = 57} 
 $$
