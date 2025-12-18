@@ -6,6 +6,17 @@ Binary search is a process that involves halving the search space every iteratio
 
 Binary search uses a left and right pointer, as well as a middle pointer that points to the index of the element in between the left and right pointers. the middle pointer separates the list into 2 parts. Since the list is sorted, assuming it is sorted in ascending order, the smaller list to the right of the middle pointer will have values that are all be larger than the element pointed to by the middle pointer, and to the left will be all the elements that have a smaller value. In the case of a list sorted in descending order, the same concept applies in opposite order. All values to the right of the middle will be smaller than the middle and all values to the left will be larger. 
 
+## Example 1:
+
+$$
+\begin{array}{ccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} \quad
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+## Example 2:
+
 ## Time Complexity
 Binary search has a time complexity of $O(\log_{} {n})$, which performs extremely fast with a large number of elements. 
 
