@@ -37,6 +37,31 @@ $$
 \quad \text{Target = 57} 
 $$
 
+This creates 2 distinct sections that contain a sequence of numbers. The right section will always be larger than all elements in the left section. To determine which section the target number might fall into, we compare the number pointed to by the mid pointer to the target. If the target is larger, the target would belong in the right section. Otherwise, the target would reside in the left section.
+
+Since `57 > 41`, the target belongs to the right section and the left pointer is moved to update the search area.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
+& & & & & \uparrow & \uparrow & & & \uparrow \\
+& & & & & \textit{mid} & \textit{l} & & & \textit{r}
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+Then, the mid pointer is updated again using the same formula, `l + (r - l) // 2`.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
+& & & & & & \uparrow & \uparrow & & \uparrow \\
+& & & & & & \textit{l} & \textit{mid} & & \textit{r}
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+
 ## Example 2:
 
 ## Time Complexity
