@@ -37,7 +37,9 @@ $$
 \quad \text{Target = 57} 
 $$
 
-This creates 2 distinct sections that contain a sequence of numbers. The right section will always be larger than all elements in the left section. To determine which section the target number might fall into, we compare the number pointed to by the mid pointer to the target. If the target is larger, the target would belong in the right section. Otherwise, the target would reside in the left section.
+This creates 2 distinct sections that contain a sequence of numbers. The right section will always be larger than all elements in the left section. The element pointed to by `mid` is compared to the target, and if it is equal, `mid` is returned.
+
+Otherwise, we need to determine which section the target number might fall into. If the target is larger than the element at `mid`, the target would belong in the right section. Otherwise, the target would reside in the left section.
 
 Since `57 > 41`, the target belongs to the right section and the left pointer is moved to update the search area.
 
@@ -61,8 +63,85 @@ $$
 \quad \text{Target = 57} 
 $$
 
+The element pointed to by `mid` is then compared to the target again. Since `68 > 57`, the target is at the left section this time, and the right pointer is moved to update the search area.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
+& & & & & & \uparrow & \uparrow & &  \\
+& & & & & & \textit{l, r} & \textit{mid} & & 
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+Then `mid` is updated using the same formula, `l + (r - l) // 2`, for the final time.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
+& & & & & & \uparrow & & &  \\
+& & & & & & \textit{l, r,} & & &  \\
+& & & & & & \textit{mid}
+\end{array}
+\quad \text{Target = 57} 
+$$
+
+Finally, the element at `mid` is compared with the target. Since the element at `mid` is equal to the target, the value at `mid`, **5**, is returned. 
 
 ## Example 2:
+
+$$
+\begin{array}{ccccccccccccc|}
+\textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} &
+\end{array}
+\quad \text{Target = 92} 
+$$
+
+Given the above array, we will use binary search to find the target in the array. Instead of being sorted in ascending order like the first example, this array is sorted in descending order. Similar to example 1, we need to initialize 2 pointers, l and r, at the beginning and end of the array respectively.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
+& \uparrow & & & & & & & & & \uparrow \\
+& \textit{l} & & & & & & & & & \textit{r}
+\end{array}
+\quad \text{Target = 92} 
+$$
+
+Next, `mid` is calculated using the formula `l + (r - l) // 2`. 
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
+& \uparrow & & & & \uparrow & & & & & \uparrow \\
+& \textit{l} & & & & \textit{mid} & & & & & \textit{r}
+\end{array}
+\quad \text{Target = 92} 
+$$
+
+Since `92 > 76`, the target belongs to the left section and the right pointer is moved to update the search area. Because the array is sorted in descending order, comparisons are opposite to those in example 1, and every element in the right section will always be smaller than the elements in the left section.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
+& \uparrow & & & \uparrow & \uparrow & & & & & \\
+& \textit{l} & & & \textit{r} & \textit{mid} & & & & &
+\end{array}
+\quad \text{Target = 92} 
+$$
+
+The right pointer is moved to update the search area.
+
+$$
+\begin{array}{cccccccccccc|}
+\textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
+& \uparrow & \uparrow & & \uparrow & & & & & & \\
+& \textit{l} & \textit{mid} & & \textit{r} & & & & & &
+\end{array}
+\quad \text{Target = 92} 
+$$
+
+Since the value at `mid` is equal to target, the value at `mid`, **1**, is returned. 
 
 ## Time Complexity
 Binary search has a time complexity of $O(\log_{} {n})$, which performs extremely fast with a large number of elements. 
