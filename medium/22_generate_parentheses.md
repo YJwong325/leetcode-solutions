@@ -8,4 +8,8 @@ Given a number, `n`, we would need to generate all possible combinations of `n` 
 2. Closed parenthesis cannot be added without a corresponding open parenthesis before it.
 3. Number of open parentheses and closed parentheses cannot exceed `n`.
 
-In order to obey the rules stated above, we need variables to keep track of each number of closed (closedN) and open (openN) parentheses. While building a valid combination, we can simplify the problem down to 2 decisions. Either we add an open parenthesis, `'('`, or a closed parenthesis, `')'`.
+In order to obey the rules stated above, we need variables to keep track of each number of closed (`closedN`) and open (`openN`) parentheses. While building a valid combination, we can simplify the problem down to 2 decisions. Either we add an open parenthesis, `'('`, or a closed parenthesis, `')'`. We stop adding parentheses when the number of open (`openN`) and closed (`closedN`) parentheses are equal to `n`. These decisions can be further elaborated with the following points.
+
+1. An open parenthesis, `'('`, can be added when `openN` is smaller than `n`.
+2. A closed parenthesis, `')'`, can be added when `closedN` is smaller than `openN`.
+3. Valid combination is found when `openN == closedN == n`.
