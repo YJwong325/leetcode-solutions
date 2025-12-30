@@ -19,4 +19,27 @@ In order to obey the rules stated above, we need variables to keep track of each
 
 A good analogy to understand the backtracking algorithm further would be to imagine a visiting a fork in a road and choosing to go down a path until the end and turning back to the same fork in the road to choose the other path. Backtracking can be thought of as visiting all paths in every fork of every road, rewinding as needed one after the other, leaving no path unchecked. ***Backtracking leaves no stones unturned***.
 
-The **reason** we need backtracking to solve this problem is because we **wish to find all possible combinations** of the numerous pairs of parentheses. Since we already defined concrete rules earlier, we essentially created our own "*forks in the road*", which allows us to make decisions, determine when we reach an end, and undo our choices just like how a "*road*" has reached the end.
+The **reason** we need backtracking to solve this problem is because we **wish to find all possible combinations** of the numerous pairs of parentheses. Since we already defined concrete rules earlier, we essentially created our own "*forks in the road*", which allows us to make decisions, determine when we reach an end just like how a "*road*" has reached the end, and undo our choices to go back to a previous "*fork in the road*".
+
+## Example 1:
+```mermaid
+flowchart TD
+    node1(("''"))
+    node2(("'('"))
+    node3(("'()'"))
+    node4(("'(('"))
+    node5(("'()('"))
+    node6(("'(()'"))
+    node7(("'()()'"))
+    node8(("'(())'"))
+
+    node1 -->|"add '('"| node2
+    node2 -->|"add ')'"| node3
+    node2 -->|"add '('"| node4
+    node3 -->|"add '('"| node5
+    node4 -->|"add ')'"| node6
+    node5 -->|"add ')'"| node7
+    node6 -->|"add ')'"| node8
+```
+
+## Example 2:
