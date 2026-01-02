@@ -474,8 +474,9 @@ $$
 ## Code
 ```python
 def mergeKLists(self, lists):
-    # divide and conquer: divide the problem into 2 lists from many 
-    #                     lists to make it more manageable
+    # divide and conquer: divide the problem and simplify it to solve for 2 lists at a time
+    # once it is possible to successfully merge 2 lists together, 
+    # it will be easier to solve the problem of merging multiple lists  
     def merge(list1, list2):
         empty = ListNode()
         new_list = empty
