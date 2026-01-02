@@ -22,6 +22,8 @@ A good analogy to understand the backtracking algorithm further would be to imag
 The **reason** we need backtracking to solve this problem is because we **wish to find all possible combinations** of the numerous pairs of parentheses. Since we already defined concrete rules earlier, we essentially created our own "*forks in the road*", which allows us to make decisions, determine when we reach an end just like how a "*road*" has reached the end, and undo our choices to go back to a previous "*fork in the road*".
 
 ## Example 1:
+Given `n = 2`
+
 ```mermaid
 flowchart TD
     node1(("''"))
@@ -43,3 +45,52 @@ flowchart TD
 ```
 
 ## Example 2:
+Given `n = 3`
+
+```mermaid
+flowchart TD
+    node1(("''"))
+    node2(("'('"))
+    node3(("'()'"))
+    node4(("'(('"))
+    node5(("'()('"))
+    node6(("'(()'"))
+    node7(("'((('"))
+    node8(("'()()'"))
+    node9(("'()(('"))
+    node10(("'()()('"))
+    node11(("'()()()'"))
+    node12(("'()(()'"))
+    node13(("'()(())'"))
+    node14(("'(()('"))
+    node15(("'(())'"))
+    node16(("'(()()'"))
+    node17(("'(()())'"))
+    node18(("'(())('"))
+    node19(("'(())()'"))
+    node20(("'((()'"))
+    node21(("'((())'"))
+    node22(("'((()))'"))
+
+    node1 -->|"add '('"| node2
+    node2 -->|"add ')'"| node3
+    node2 -->|"add '('"| node4
+    node3 --> node5
+    node4 --> node6
+    node4 --> node7
+    node5 --> node8
+    node5 --> node9
+    node8 --> node10
+    node10 --> node11
+    node9 --> node12
+    node12 --> node13
+    node6 --> node14
+    node6 --> node15
+    node14 --> node16
+    node16 --> node17
+    node15 --> node18
+    node18 --> node19
+    node7 --> node20
+    node20 --> node21
+    node21 --> node22
+```
