@@ -9,7 +9,7 @@ Binary search uses a left and right pointer, as well as a middle pointer that po
 ## Example 1:
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} &
 \end{array}
 \quad \text{Target = 57} 
@@ -18,7 +18,7 @@ $$
 Given the above array, we will use binary search to find the target in the array. First, we need to initialize 2 pointers, l and r, at the beginning and end of the array respectively. 
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
 & \uparrow & & & & & & & & \uparrow \\
 & \textit{l} & & & & & & & & \textit{r}
@@ -29,7 +29,7 @@ $$
 Next, we determine the middle of the array by adding half the distance between the left and right pointers to the left pointer, using the formula `l + (r - l) // 2`. The left and right pointers hold the index of the elements they are pointing to.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
 & \uparrow & & & & \uparrow & & & & \uparrow \\
 & \textit{l} & & & & \textit{mid} & & & & \textit{r}
@@ -44,7 +44,7 @@ Otherwise, we need to determine which section the target number might fall into.
 Since `57 > 41`, the target belongs to the right section and the left pointer is moved to update the search area.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
 & & & & & \uparrow & \uparrow & & & \uparrow \\
 & & & & & \textit{mid} & \textit{l} & & & \textit{r}
@@ -55,7 +55,7 @@ $$
 Then, the mid pointer is updated again using the same formula, `l + (r - l) // 2`.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
 & & & & & & \uparrow & \uparrow & & \uparrow \\
 & & & & & & \textit{l} & \textit{mid} & & \textit{r}
@@ -66,7 +66,7 @@ $$
 The element pointed to by `mid` is then compared to the target again. Since `68 > 57`, the target is at the left section this time, and the right pointer is moved to update the search area.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
 & & & & & & \uparrow & \uparrow & &  \\
 & & & & & & \textit{l, r} & \textit{mid} & & 
@@ -77,7 +77,7 @@ $$
 Then `mid` is updated using the same formula, `l + (r - l) // 2`, for the final time.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 3, & 12, & 25, & 33, & 41, & 57, & 68, & 74, & 92 & \textbf{]} & \\
 & & & & & & \uparrow & & &  \\
 & & & & & & \textit{l, r,} & & &  \\
@@ -91,7 +91,7 @@ Finally, the element at `mid` is compared with the target. Since the element at 
 ## Example 2:
 
 $$
-\begin{array}{ccccccccccccc|}
+\large\begin{array}{ccccccccccccc|}
 \textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} &
 \end{array}
 \quad \text{Target = 92} 
@@ -100,7 +100,7 @@ $$
 Given the above array, we will use binary search to find the target in the array. Instead of being sorted in ascending order like the first example, this array is sorted in descending order. Similar to example 1, we need to initialize 2 pointers, l and r, at the beginning and end of the array respectively.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
 & \uparrow & & & & & & & & & \uparrow \\
 & \textit{l} & & & & & & & & & \textit{r}
@@ -111,7 +111,7 @@ $$
 Next, `mid` is calculated using the formula `l + (r - l) // 2`. 
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
 & \uparrow & & & & \uparrow & & & & & \uparrow \\
 & \textit{l} & & & & \textit{mid} & & & & & \textit{r}
@@ -122,7 +122,7 @@ $$
 Since `92 > 76`, the target belongs to the left section and the right pointer is moved to update the search area. Because the array is sorted in descending order, comparisons are opposite to those in example 1, and every element in the right section will always be smaller than the elements in the left section.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
 & \uparrow & & & \uparrow & \uparrow & & & & & \\
 & \textit{l} & & & \textit{r} & \textit{mid} & & & & &
@@ -133,7 +133,7 @@ $$
 The right pointer is moved to update the search area.
 
 $$
-\begin{array}{cccccccccccc|}
+\large\begin{array}{cccccccccccc|}
 \textbf{[} & 97, & 92, & 88, & 81, & 76, & 70, & 65, & 59, & 43 & 21 & \textbf{]} & \\
 & \uparrow & \uparrow & & \uparrow & & & & & & \\
 & \textit{l} & \textit{mid} & & \textit{r} & & & & & &
@@ -164,7 +164,7 @@ i = 0 & & i = 1 & & i = 2 & & i = 3 & & i = 4 & & & & i = k
 \end{array}
 $$
 
-Since time complexity is calculated as the worst case scenario, we would need to let $\Large\frac{n}{2^k} \normalsize= 1$. When the search area reaches 1, there is only 1 element left in the list, which means the target element would definitely be found in the search area given that the target is in the list.
+Since time complexity is calculated as the worst case scenario, we would need to let $\frac{n}{2^k} = 1$. When the search area reaches 1, there is only 1 element left in the list, which means the target element would definitely be found in the search area given that the target is in the list.
 
 $$
 \begin{array}{ccc}
