@@ -360,19 +360,19 @@ After iterating through the list once and joining 2 linked list using the method
 
 $$
 \begin{array}{ccc}
-\large \textbf{[} \space \space \normalsize l_1\_l_2, & l_3\_l_4, & l_5 \large \space \space \textbf{]} \\
+\large \textbf{[} \space \space \normalsize l_1\text{\_}l_2, & l_3\text{\_}l_4, & l_5 \large \space \space \textbf{]} \\
 \end{array}
 $$
 
 $$
-\small\text{$l_1\_l_2$ denotes $l_1$ merged with $l_2$}
+\small\text{$l_1\text{\_}l_2$ denotes $l_1$ merged with $l_2$}
 $$
 
 Iterating through the list for a second time will yield:
 
 $$
 \begin{array}{cc}
-\large \textbf{[} \space \space \normalsize l_1\_l_2\_l_3\_l_4, & l_5 \large \space \space \textbf{]} \\
+\large \textbf{[} \space \space \normalsize l_1\text{\_}l_2\text{\_}l_3\text{\_}l_4, & l_5 \large \space \space \textbf{]} \\
 \end{array}
 $$
 
@@ -380,7 +380,7 @@ A third and final iteration through the entire array produces the final linked l
 
 $$
 \begin{array}{c}
-\large \textbf{[} \space \space \normalsize l_1\_l_2\_l_3\_l_4\_l_5 \large \space \space \textbf{]} \\
+\large \textbf{[} \space \space \normalsize l_1\text{\_}l_2\text{\_}l_3\text{\_}l_4\text{\_}l_5 \large \space \space \textbf{]} \\
 \end{array}
 $$
 
