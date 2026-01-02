@@ -14,11 +14,11 @@ For example:
 $$
 \begin{array}{c}
 \textit{Original} \\
-\left[\space\begin{array}{ccc}
+\left[\space\space\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{array}\space\right]
+\end{array}\space\space\right]
 \end{array}
 $$
 
@@ -27,19 +27,19 @@ This is a matrix with the main diagonal filled with the value 'D'. To get the tr
 $$
 \begin{array}{ccc}
 & \textit{Transpose} & \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 D & X & Y \\
 A & D & Z \\
 B & C & D
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -62,19 +62,19 @@ This reflects the entire matrix about a center vertical line, which effectively 
 $$
 \begin{array}{ccc}
 & \textit{Reflect} & \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 D & X & Y \\
 A & D & Z \\
 B & C & D
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 Y & X & D \\
 Z & D & A \\
 D & C & B
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -83,19 +83,19 @@ Thus,
 $$
 \begin{array}{ccc}
 \textit{Original} & & \textit{Final} \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 Y & X & D \\
 Z & D & A \\
 D & C & B
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -106,10 +106,10 @@ Let the original matrix be:
 $$
 \begin{array}{c}
 \textit{Original} \\
-\left[\begin{array}{cc}
+\left[\space\begin{array}{cc}
 1 & 27 \\
 4 & 38 
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -118,17 +118,17 @@ We want to end up with a matrix that is equivalent to rotating the original matr
 $$
 \begin{array}{ccc}
 \textit{Original} & \textit{Rotate 90°} & \textit{Final} \\
-\left[\begin{array}{cc}
+\left[\space\begin{array}{cc}
 1 & 27 \\
 4 & 38 
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{cc}
+\left[\space\begin{array}{cc}
 4 & 1 \\
 38 & 27
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -138,17 +138,17 @@ First, we need to find the transpose of the original matrix.
 $$
 \begin{array}{ccc}
 \textit{Original} & \textit{Transpose} & \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 1 & 27 \\
 4 & 38 
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 1 & 4 \\
 27 & 38 
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -158,17 +158,17 @@ Then, we need to reflect the resulting matrix after the transposition operation,
 $$
 \begin{array}{ccc}
 & \textit{Reflect} & \textit{Final} \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 1 & 4 \\
 27 & 38 
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 4 & 1 \\
 38 & 27 
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -179,13 +179,13 @@ We can try this approach on a larger matrix to prove that it works. Let the orig
 $$
 \begin{array}{c}
 \textit{Original} \\
-\left[\begin{array}{ccccc}
+\left[\space\begin{array}{ccccc}
 7 & 2 & 9 & 4 & 1 \\
 3 & 8 & 6 & 0 & 5 \\
 4 & 1 & 3 & 7 & 2 \\
 9 & 6 & 5 & 8 & 0 \\
 2 & 7 & 0 & 1 & 3
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -194,23 +194,23 @@ We want to end up with a matrix that is equivalent to rotating the original matr
 $$
 \begin{array}{ccc}
 \textit{Original} & \textit{Rotate 90°} & \textit{Final} \\
-\left[\begin{array}{cc}
+\left[\space\begin{array}{cc}
 7 & 2 & 9 & 4 & 1 \\
 3 & 8 & 6 & 0 & 5 \\
 4 & 1 & 3 & 7 & 2 \\
 9 & 6 & 5 & 8 & 0 \\
 2 & 7 & 0 & 1 & 3
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{cc}
+\left[\space\begin{array}{cc}
 2 & 9 & 4 & 3 & 7 \\
 7 & 6 & 1 & 8 & 2 \\
 0 & 5 & 3 & 6 & 9 \\
 1 & 8 & 7 & 0 & 4 \\
 3 & 0 & 2 & 5 & 1
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -220,23 +220,23 @@ First, we need to find the transpose of the original matrix.
 $$
 \begin{array}{ccc}
 \textit{Original} & \textit{Transpose} & \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 7 & 2 & 9 & 4 & 1 \\
 3 & 8 & 6 & 0 & 5 \\
 4 & 1 & 3 & 7 & 2 \\
 9 & 6 & 5 & 8 & 0 \\
 2 & 7 & 0 & 1 & 3
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 7 & 3 & 4 & 9 & 2 \\
 2 & 8 & 1 & 6 & 7 \\
 9 & 6 & 3 & 5 & 0 \\
 4 & 0 & 7 & 8 & 1 \\
 1 & 5 & 2 & 0 & 3
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
@@ -246,23 +246,23 @@ Then, we need to reflect the resulting matrix after the transposition operation,
 $$
 \begin{array}{ccc}
 & \textit{Reflect} & \textit{Final} \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 7 & 3 & 4 & 9 & 2 \\
 2 & 8 & 1 & 6 & 7 \\
 9 & 6 & 3 & 5 & 0 \\
 4 & 0 & 7 & 8 & 1 \\
 1 & 5 & 2 & 0 & 3
-\end{array}\right]
+\end{array}\space\right]
 &
 \longrightarrow
 &
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 2 & 9 & 4 & 3 & 7 \\
 7 & 6 & 1 & 8 & 2 \\
 0 & 5 & 3 & 6 & 9 \\
 1 & 8 & 7 & 0 & 4 \\
 3 & 0 & 2 & 5 & 1
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
