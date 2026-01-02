@@ -390,17 +390,17 @@ Initial array of linked list:
 
 $$
 \begin{bmatrix}
-\begin{bmatrix} 7, & 13, & 42 \end{bmatrix}, &
+\space\begin{bmatrix} 7, & 13, & 42 \end{bmatrix}, &
 \begin{bmatrix} 99 \end{bmatrix}, &
 \begin{bmatrix} 2, & 5, & 5, & 8 \end{bmatrix}, &
-[], &
+\text{[ ]}, &
 \begin{bmatrix} 3, & 12, & 65, & 77, & 91 \end{bmatrix}, &
-\begin{bmatrix} 8, & 14 \end{bmatrix}
+\begin{bmatrix} 8, & 14 \end{bmatrix} \space
 \end{bmatrix}
 $$
 
 $$
-\left[\begin{array}{cccccc}
+\begin{bmatrix}
 
 \left[\begin{array}{ccc} 7, & 13, & 42 \end{array}\right], &
 \left[\begin{array}{c} 99 \end{array}\right], &
@@ -409,7 +409,7 @@ $$
 \left[\begin{array}{ccccc} 3, & 12, & 65, & 77, & 91 \end{array}\right], &
 \left[\begin{array}{cc} 8, & 14 \end{array}\right]
 
-\end{array}\right]
+\end{bmatrix}
 $$
 
 After the first iteration and using the merge() function that was defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
