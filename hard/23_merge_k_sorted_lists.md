@@ -351,17 +351,17 @@ Using the method of joining 2 linked lists together in Part 1, we can iterate th
 Here we have a list of 5 linked lists:
 
 $$
-\begin{array}{ccccc}
-\large \textbf{[} \space \space \normalsize l_1, & l_2, & l_3, & l_4, & l_5 \large \space \space \textbf{]} \\
-\end{array}
+\left[\begin{array}{ccccc}
+l_1, & l_2, & l_3, & l_4, & l_5
+\end{array}\right]
 $$
 
 After iterating through the list once and joining 2 linked list using the method in part 1, the array of linked lists would look something like this:
 
 $$
-\begin{array}{ccc}
-\large \textbf{[} \space \space \normalsize l_{1}l_{2}, & l_{3}l_{4}, & l_5 \large \space \space \textbf{]} \\
-\end{array}
+\left[\begin{array}{ccc}
+l_{1}l_{2}, & l_{3}l_{4}, & l_5
+\end{array}\right]
 $$
 
 $$
@@ -371,17 +371,17 @@ $$
 Iterating through the list for a second time will yield:
 
 $$
-\begin{array}{cc}
-\large \textbf{[} \space \space \normalsize l_{1}l_{2}l_{3}l_{4}, & l_{5} \large \space \space \textbf{]} \\
-\end{array}
+\left[\begin{array}{cc}
+l_{1}l_{2}l_{3}l_{4}, & l_{5}
+\end{array}\right]
 $$
 
 A third and final iteration through the entire array produces the final linked list, with its nodes sorted in ascending order by using the method in part 1.
 
 $$
-\begin{array}{c}
-\large \textbf{[} \space \space \normalsize l_{1}l_{2}l_{3}l_{4}l_{5} \large \space \space \textbf{]}
-\end{array}
+\left[\begin{array}{c}
+l_{1}l_{2}l_{3}l_{4}l_{5}
+\end{array}\right]
 $$
 
 ## Example 1:
@@ -393,7 +393,7 @@ $$
 \space\begin{bmatrix} \space 7, & 13, & 42 \space \end{bmatrix}, &
 \begin{bmatrix} \space 99 \space \end{bmatrix}, &
 \begin{bmatrix} \space 2, & 5, & 5, & 8 \space \end{bmatrix}, &
-\text{[ ]}, &
+\begin{bmatrix} \space \end{bmatrix}, &
 \begin{bmatrix} \space 3, & 12, & 65, & 77, & 91 \space \end{bmatrix}, &
 \begin{bmatrix} \space 8, & 14 \space \end{bmatrix} \space
 \end{bmatrix}
@@ -402,58 +402,28 @@ $$
 After the first iteration and using the merge() function that was defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
 
 $$
-\begin{array}{ccc}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{cccc}
-\large \textbf{[} \space \normalsize 7, & 13, & 42, & 99 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cccc}
-\large \textbf{[} \space \normalsize 2, & 5, & 5, & 8 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{ccccccc}
-\large \textbf{[} \space \normalsize 3, & 8, & 12, & 14, & 65, & 77, & 91 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 7, & 13, & 42, & 99 \space \end{bmatrix}, &
+\space\begin{bmatrix} \space 2, & 5, & 5, & 8 \space \end{bmatrix}, &
+\space\begin{bmatrix} \space 3, & 8, & 12, & 14, & 65, & 77, & 91 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
 
 After the second iteration: 
 
 $$
-\begin{array}{cc}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{cccccccc}
-\large \textbf{[} \space \normalsize 2, & 5, & 5, & 7, & 8, & 13, & 42, & 99 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{ccccccc}
-\large \textbf{[} \space \normalsize 3, & 8, & 12, & 14, & 65, & 77, & 91 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 2, & 5, & 5, & 7, & 8, & 13, & 42, & 99 \space \end{bmatrix}, &
+\space\begin{bmatrix} \space 3, & 8, & 12, & 14, & 65, & 77, & 91 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
 
 The final iteration will yield the complete merged linked list with all values sorted in ascending order. 
 
 $$
-\begin{array}{c}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{ccccccccccccccc}
-\large \textbf{[} \space \normalsize 2, & 3, & 5, & 5, & 7, & 8, & 8, & 12, & 13, & 14, & 42, & 65, & 77, & 91, & 99 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 2, & 3, & 5, & 5, & 7, & 8, & 8, & 12, & 13, & 14, & 42, & 65, & 77, & 91, & 99 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
 
 ## Example 2:
@@ -461,74 +431,32 @@ $$
 Initial array of linked list:
 
 $$
-\begin{array}{ccccc}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{cccc}
-\large \textbf{[} \space \normalsize 5, & 8, & 12, & 19 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{ccc}
-\large \textbf{[} \space \normalsize 3, & 7, & 14 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{ccccc}
-\large \textbf{[} \space \normalsize 2, & 6, & 9, & 11, & 21 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cc}
-\large \textbf{[} \space \normalsize 4, & 18 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cccccc}
-\large \textbf{[} \space \normalsize 1, & 10, & 13, & 15, & 17, & 20 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 5, & 8, & 12, & 19 \space \end{bmatrix}, &
+\begin{bmatrix} \space 3, & 7, & 14 \space \end{bmatrix}, &
+\begin{bmatrix} \space 2, & 6, & 9, & 11, & 21 \space \end{bmatrix}, &
+\begin{bmatrix} \space 4, & 18 \space \end{bmatrix}, &
+\begin{bmatrix} \space 1, & 10, & 13, & 15, & 17, & 20 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
 
 After the first iteration using the merge() function:
 
 $$
-\begin{array}{ccc}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{ccccccc}
-\large \textbf{[} \space \normalsize 3, & 5, & 7, & 8, & 12, & 14, & 19 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{ccccccc}
-\large \textbf{[} \space \normalsize 2, & 4, & 6, & 9, & 11, & 18, & 21 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cccccc}
-\large \textbf{[} \space \normalsize 1, & 10, & 13, & 15, & 17, & 20 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 3, & 5, & 7, & 8, & 12, & 14, & 19 \space \end{bmatrix}, &
+\begin{bmatrix} \space 2, & 4, & 6, & 9, & 11, & 18, & 21 \space \end{bmatrix}, &
+\begin{bmatrix} \space 1, & 10, & 13, & 15, & 17, & 20 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
 
 After the second iteration we get:
 
 $$
-\begin{array}{cc}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{cccccccccccccc}
-\large \textbf{[} \space \normalsize 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 11, & 12, & 14, & 18, & 19, & 21 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cccccc}
-\large \textbf{[} \space \normalsize 1, & 10, & 13, & 15, & 17, & 20 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 11, & 12, & 14, & 18, & 19, & 21 \space \end{bmatrix}, &
+\begin{bmatrix} \space 1, & 10, & 13, & 15, & 17, & 20 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
 
 Notice how the last linked list in the array remains unchanged. In the first and second iteration, the index of the last linked list was odd. 
@@ -538,18 +466,10 @@ Considering the fact that the index of the first linked list in a pair will alwa
 After the third iteration, we will get the final linked list sorted in ascending order for example number 2.
 
 $$
-\begin{array}{c}
-\Large \textbf{[} \space
-
-\normalsize
-\begin{array}{cccccccccccccccccccc}
-\large \textbf{[} \space \normalsize 1, & 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 10, & 11, & 12, & 13, & 14, & 15, & 17, & 18, & 19, & 20, & 21 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
-\end{array}
+\begin{bmatrix}
+\space\begin{bmatrix} \space 1, & 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 10, & 11, & 12, & 13, & 14, & 15, & 17, & 18, & 19, & 20, & 21 \space \end{bmatrix} \space
+\end{bmatrix}
 $$
-
 
 ## Code
 ```python
