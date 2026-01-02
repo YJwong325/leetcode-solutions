@@ -351,37 +351,37 @@ Using the method of joining 2 linked lists together in Part 1, we can iterate th
 Here we have a list of 5 linked lists:
 
 $$
-\left[\begin{array}{ccccc}
+\LARGE\left[\space\begin{array}{ccccc}
 l_1, & l_2, & l_3, & l_4, & l_5
-\end{array}\right]
+\end{array}\space\right]
 $$
 
 After iterating through the list once and joining 2 linked list using the method in part 1, the array of linked lists would look something like this:
 
 $$
-\left[\begin{array}{ccc}
+\LARGE\left[\space\begin{array}{ccc}
 l_{1}l_{2}, & l_{3}l_{4}, & l_5
-\end{array}\right]
+\end{array}\space\right]
 $$
 
 $$
-\small\text{$l_{1}l_{2}$ denotes $l_{1}$ merged with $l_{2}$}
+\text{$l_{1}l_{2}$ denotes $l_{1}$ merged with $l_{2}$}
 $$
 
 Iterating through the list for a second time will yield:
 
 $$
-\left[\begin{array}{cc}
+\LARGE\left[\space\begin{array}{cc}
 l_{1}l_{2}l_{3}l_{4}, & l_{5}
-\end{array}\right]
+\end{array}\space\right]
 $$
 
 A third and final iteration through the entire array produces the final linked list, with its nodes sorted in ascending order by using the method in part 1.
 
 $$
-\left[\begin{array}{c}
+\LARGE\left[\space\begin{array}{c}
 l_{1}l_{2}l_{3}l_{4}l_{5}
-\end{array}\right]
+\end{array}\space\right]
 $$
 
 ## Example 1:
@@ -389,7 +389,7 @@ $$
 Initial array of linked list:
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 7, & 13, & 42 \space \end{bmatrix}, &
 \begin{bmatrix} \space 99 \space \end{bmatrix}, &
 \begin{bmatrix} \space 2, & 5, & 5, & 8 \space \end{bmatrix}, &
@@ -402,7 +402,7 @@ $$
 After the first iteration and using the merge() function that was defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 7, & 13, & 42, & 99 \space \end{bmatrix}, &
 \space\begin{bmatrix} \space 2, & 5, & 5, & 8 \space \end{bmatrix}, &
 \space\begin{bmatrix} \space 3, & 8, & 12, & 14, & 65, & 77, & 91 \space \end{bmatrix} \space
@@ -412,7 +412,7 @@ $$
 After the second iteration: 
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 2, & 5, & 5, & 7, & 8, & 13, & 42, & 99 \space \end{bmatrix}, &
 \space\begin{bmatrix} \space 3, & 8, & 12, & 14, & 65, & 77, & 91 \space \end{bmatrix} \space
 \end{bmatrix}
@@ -421,7 +421,7 @@ $$
 The final iteration will yield the complete merged linked list with all values sorted in ascending order. 
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 2, & 3, & 5, & 5, & 7, & 8, & 8, & 12, & 13, & 14, & 42, & 65, & 77, & 91, & 99 \space \end{bmatrix} \space
 \end{bmatrix}
 $$
@@ -431,7 +431,7 @@ $$
 Initial array of linked list:
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 5, & 8, & 12, & 19 \space \end{bmatrix}, &
 \begin{bmatrix} \space 3, & 7, & 14 \space \end{bmatrix}, &
 \begin{bmatrix} \space 2, & 6, & 9, & 11, & 21 \space \end{bmatrix}, &
@@ -443,7 +443,7 @@ $$
 After the first iteration using the merge() function:
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 3, & 5, & 7, & 8, & 12, & 14, & 19 \space \end{bmatrix}, &
 \begin{bmatrix} \space 2, & 4, & 6, & 9, & 11, & 18, & 21 \space \end{bmatrix}, &
 \begin{bmatrix} \space 1, & 10, & 13, & 15, & 17, & 20 \space \end{bmatrix} \space
@@ -453,7 +453,7 @@ $$
 After the second iteration we get:
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 11, & 12, & 14, & 18, & 19, & 21 \space \end{bmatrix}, &
 \begin{bmatrix} \space 1, & 10, & 13, & 15, & 17, & 20 \space \end{bmatrix} \space
 \end{bmatrix}
@@ -466,7 +466,7 @@ Considering the fact that the index of the first linked list in a pair will alwa
 After the third iteration, we will get the final linked list sorted in ascending order for example number 2.
 
 $$
-\begin{bmatrix}
+\large\begin{bmatrix}
 \space\begin{bmatrix} \space 1, & 2, & 3, & 4, & 5, & 6, & 7, & 8, & 9, & 10, & 11, & 12, & 13, & 14, & 15, & 17, & 18, & 19, & 20, & 21 \space \end{bmatrix} \space
 \end{bmatrix}
 $$
