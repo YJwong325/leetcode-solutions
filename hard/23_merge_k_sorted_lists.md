@@ -386,6 +386,18 @@ $$
 
 ## Example 1:
 
+$$
+\begin{array}{cc}
+\left[
+\begin{array}{c}
+\left[ 
+test
+\right]
+\end{array}
+\right]
+\end{array}
+$$
+
 Initial array of linked list:
 
 $$
