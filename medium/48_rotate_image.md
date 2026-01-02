@@ -14,11 +14,11 @@ For example:
 $$
 \begin{array}{c}
 \textit{Original} \\
-\left[\begin{array}{ccc}
+\left[\space\begin{array}{ccc}
 D & A & B \\
 X & D & C \\
 Y & Z & D
-\end{array}\right]
+\end{array}\space\right]
 \end{array}
 $$
 
