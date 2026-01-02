@@ -386,18 +386,6 @@ $$
 
 ## Example 1:
 
-$$
-\begin{array}{cc}
-\left[
-\begin{array}{c}
-\left[ 
-test
-\right]
-\end{array}
-\right]
-\end{array}
-$$
-
 Initial array of linked list:
 
 $$
@@ -415,21 +403,6 @@ $$
 &
 \begin{array}{cccc}
 \large \textbf{[} \space \normalsize 2, & 5, & 5, & 8 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{}
-\large \textbf{[} \space \space \textbf{]}
-\end{array},
-&
-\begin{array}{ccccc}
-\large \textbf{[} \space \normalsize 3, & 12, & 65, & 77, & 91 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cc}
-\large \textbf{[} \space \normalsize 8, & 14 \large \space \textbf{]}
-\end{array}
-
-\Large \space \textbf{]}
 \end{array}
 $$
 
