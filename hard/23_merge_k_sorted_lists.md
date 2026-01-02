@@ -390,25 +390,12 @@ Initial array of linked list:
 
 $$
 \begin{bmatrix}
-\space\begin{bmatrix} 7, & 13, & 42 \end{bmatrix}, &
-\begin{bmatrix} 99 \end{bmatrix}, &
-\begin{bmatrix} 2, & 5, & 5, & 8 \end{bmatrix}, &
+\space\begin{bmatrix} \space 7, & 13, & 42 \space \end{bmatrix}, &
+\begin{bmatrix} \space 99 \space \end{bmatrix}, &
+\begin{bmatrix} \space 2, & 5, & 5, & 8 \space \end{bmatrix}, &
 \text{[ ]}, &
-\begin{bmatrix} 3, & 12, & 65, & 77, & 91 \end{bmatrix}, &
-\begin{bmatrix} 8, & 14 \end{bmatrix} \space
-\end{bmatrix}
-$$
-
-$$
-\begin{bmatrix}
-
-\left[\begin{array}{ccc} 7, & 13, & 42 \end{array}\right], &
-\left[\begin{array}{c} 99 \end{array}\right], &
-\left[\begin{array}{cccc} 2, & 5, & 5, & 8 \end{array}\right], &
-[], &
-\left[\begin{array}{ccccc} 3, & 12, & 65, & 77, & 91 \end{array}\right], &
-\left[\begin{array}{cc} 8, & 14 \end{array}\right]
-
+\begin{bmatrix} \space 3, & 12, & 65, & 77, & 91 \space \end{bmatrix}, &
+\begin{bmatrix} \space 8, & 14 \space \end{bmatrix} \space
 \end{bmatrix}
 $$
 
