@@ -1,4 +1,4 @@
-# LeetCode Solutions
+# Yuan Jie's LeetCode Solutions
 Every leetcode problem that I have learned and solved are documented here. 
 Most of the solutions here are inspired by public resources like [NeetCode](https://www.youtube.com/@NeetCode), which I use to grasp new concepts that are unfamiliar to me. 
 
