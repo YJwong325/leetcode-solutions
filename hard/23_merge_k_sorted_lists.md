@@ -390,19 +390,15 @@ Initial array of linked list:
 
 $$
 \begin{array}{cccccc}
-\Large \textbf{[} \space
 
-\normalsize
 \begin{array}{ccc}
 \large \textbf{[} \space \normalsize 7, & 13, & 42 \large \space \textbf{]}
 \end{array},
 &
 \begin{array}{c}
 \large \textbf{[} \space \normalsize 99 \large \space \textbf{]}
-\end{array},
-&
-\begin{array}{cccc}
-\large \textbf{[} \space \normalsize 2, & 5, & 5, & 8 \large \space \textbf{]}
+\end{array}
+
 \end{array}
 $$
 
