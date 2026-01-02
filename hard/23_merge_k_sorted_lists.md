@@ -389,26 +389,44 @@ $$
 Initial array of linked list:
 
 $$
+\left[\begin{array}{ccc}
+7, &
+13, & 
+42
+\end{array}\right]
+$$
+
+$$
+\begin{bmatrix}
+\begin{bmatrix} 7, & 13, & 42 \end{bmatrix}, &
+\begin{bmatrix} 99 \end{bmatrix}, &
+\begin{bmatrix} 2, & 5, & 5, & 8 \end{bmatrix}, &
+[], &
+\begin{bmatrix} 3, & 12, & 65, & 77, & 91 \end{bmatrix}, &
+\begin{bmatrix} 8, & 14 \end{bmatrix}
+\end{bmatrix}
+$$
+
+$$
 \left[\begin{array}{cccccc}
 
 \left[\begin{array}{ccc}
 7, & 13, & 42
-\end{array}\right]\text{,}
+\end{array}\right],
 &
 \left[\begin{array}{c}
 99
-\end{array}\right]\text{,}
+\end{array}\right],
 &
 \left[\begin{array}{cccc}
 2, & 5, & 5, & 8
-\end{array}\right]\text{,}
+\end{array}\right],
 &
-\left[\begin{array}{c}
-\end{array}\right]\text{,}
+[],
 &
 \left[\begin{array}{ccccc}
 3, & 12, & 65, & 77, & 91
-\end{array}\right]\text{,}
+\end{array}\right],
 &
 \left[\begin{array}{cc}
 8, & 14
