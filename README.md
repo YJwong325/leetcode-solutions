@@ -2,19 +2,8 @@
 Every leetcode problem that I have learned and solved are documented here. 
 Most of the solutions here are inspired by public resources like [NeetCode](https://www.youtube.com/@NeetCode), which I use to grasp new concepts that are unfamiliar to me. 
 
-## How to run .py code snippets
-- Clone this repository or download the raw .py files
-- Open the .py files in Visual Studio Code
-- Install the Code Runner extension to run the script
-
-Alternatively, typing the commands below in a command line interface in the same directory will run the script.
-```bash
-python python_file_name.py
-```
-Or
-```bash
-python3 python_file_name.py
-```
+## Python code snippets (.py)
+Each solution includes example test cases that can be executed directly to print the results in the console.
 
 ## Purpose 
 - Keep track of my progress with personal notes and explanations
