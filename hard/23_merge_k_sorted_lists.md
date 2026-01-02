@@ -380,7 +380,7 @@ A third and final iteration through the entire array produces the final linked l
 
 $$
 \begin{array}{c}
-\large \textbf{[} \space \space \normalsize l_{1}l_{2}l_{3}l_{4}l_{5} \large \space \space \textbf{]} \\
+\large \textbf{[} \space \space \normalsize l_{1}l_{2}l_{3}l_{4}l_{5} \large \space \space \textbf{]}
 \end{array}
 $$
 
@@ -389,17 +389,32 @@ $$
 Initial array of linked list:
 
 $$
-\begin{array}{cccccc}
+\left[\begin{array}{cccccc}
 
-\begin{array}{ccc}
-\large \textbf{[} \space \normalsize 7, & 13, & 42 \large \space \textbf{]}
-\end{array},
+\left[\begin{array}{ccc}
+7, & 13, & 42
+\end{array}\right],
 &
-\begin{array}{c}
-\large \textbf{[} \space \normalsize 99 \large \space \textbf{]}
-\end{array}
+\left[\begin{array}{c}
+99
+\end{array}\right],
+&
+\left[\begin{array}{cccc}
+2, & 5, & 5, & 8
+\end{array}\right],
+&
+\left[\begin{array}{}
+\end{array}\right],
+&
+\left[\begin{array}{ccccc}
+3, & 12, & 65, & 77, & 91
+\end{array}\right],
+&
+\left[\begin{array}{cc}
+8, & 14
+\end{array}\right]
 
-\end{array}
+\end{array}\right]
 $$
 
 After the first iteration and using the merge() function that was defined to merge 2 lists at a time, the initial array will be transformed into the following array: 
