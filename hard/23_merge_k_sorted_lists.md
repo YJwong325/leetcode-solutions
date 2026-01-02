@@ -403,7 +403,7 @@ $$
 2, & 5, & 5, & 8
 \end{array}\right]\text{,}
 &
-\left[\begin{array}{}
+\left[\begin{array}{c}
 \end{array}\right]\text{,}
 &
 \left[\begin{array}{ccccc}
