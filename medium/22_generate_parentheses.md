@@ -94,3 +94,25 @@ flowchart TD
     node20 --> node21
     node21 --> node22
 ```
+
+## Code
+```python
+def generateParenthesis(n):
+    stack = []
+    res = []
+
+    def backtrack(openN, closedN):
+        if openN < n:
+            stack.append('(')
+            backtrack(openN + 1, closedN)
+            stack.pop()
+        if closedN < openN:
+            stack.append(')')
+            backtrack(openN, closedN + 1)
+            stack.pop()
+        if n == closedN == openN:
+            res.append("".join(stack))
+
+    backtrack(0, 0)
+    return res
+```
