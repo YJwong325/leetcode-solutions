@@ -26,22 +26,22 @@ Given `n = 2`
 
 ```mermaid
 flowchart TD
-    node1(("''"))
-    node2(("'('"))
-    node3(("'()'"))
-    node4(("'(('"))
-    node5(("'()('"))
-    node6(("'(()'"))
-    node7(("'()()'"))
-    node8(("'(())'"))
+    lvl1_node1(("''"))
+    lvl2_node2(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node1(("'()('"))
+    lvl4_node2(("'(()'"))
+    lvl5_node1(("'()()'"))
+    lvl5_node2(("'(())'"))
 
-    node1 -->|"add '('"| node2
-    node2 -->|"add ')'"| node3
-    node2 -->|"add '('"| node4
-    node3 -->|"add '('"| node5
-    node4 -->|"add ')'"| node6
-    node5 -->|"add ')'"| node7
-    node6 -->|"add ')'"| node8
+    lvl1_node1 -->|"add '('"| lvl2_node2
+    lvl2_node2 -->|"add ')'"| lvl3_node1
+    lvl2_node2 -->|"add '('"| lvl3_node2
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+    lvl4_node2 -->|"add ')'"| lvl5_node2
 ```
 
 ## Example 2:
