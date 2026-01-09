@@ -49,50 +49,50 @@ Given `n = 3`
 
 ```mermaid
 flowchart TD
-    node1(("''"))
-    node2(("'('"))
-    node3(("'()'"))
-    node4(("'(('"))
-    node5(("'()('"))
-    node6(("'(()'"))
-    node7(("'((('"))
-    node8(("'()()'"))
-    node9(("'()(('"))
-    node10(("'()()('"))
-    node11(("'()()()'"))
-    node12(("'()(()'"))
-    node13(("'()(())'"))
-    node14(("'(()('"))
-    node15(("'(())'"))
-    node16(("'(()()'"))
-    node17(("'(()())'"))
-    node18(("'(())('"))
-    node19(("'(())()'"))
-    node20(("'((()'"))
-    node21(("'((())'"))
-    node22(("'((()))'"))
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node1(("'()('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node1(("'()()'"))
+    lvl5_node2(("'()(('"))
+    lvl6_node1(("'()()('"))
+    lvl7_node1(("'()()()'"))
+    lvl6_node2(("'()(()'"))
+    lvl7_node2(("'()(())'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
 
-    node1 -->|"add '('"| node2
-    node2 -->|"add ')'"| node3
-    node2 -->|"add '('"| node4
-    node3 --> node5
-    node4 --> node6
-    node4 --> node7
-    node5 --> node8
-    node5 --> node9
-    node8 --> node10
-    node10 --> node11
-    node9 --> node12
-    node12 --> node13
-    node6 --> node14
-    node6 --> node15
-    node14 --> node16
-    node16 --> node17
-    node15 --> node18
-    node18 --> node19
-    node7 --> node20
-    node20 --> node21
-    node21 --> node22
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+    lvl4_node1 -->|"add '('"| lvl5_node2
+    lvl5_node1 -->|"add '('"| lvl6_node1
+    lvl6_node1 -->|"add ')'"| lvl7_node1
+    lvl5_node2 -->|"add ')'"| lvl6_node2
+    lvl6_node2 -->|"add ')'"| lvl7_node2
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
 ```
 
 ## Code
