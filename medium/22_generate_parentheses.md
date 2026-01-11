@@ -102,6 +102,18 @@ flowchart TD
     lvl6_node5 -->|"add ')'"| lvl7_node5
 ```
 
+ - in this example, we see a total of 4 forks in the whole decision tree
+ - similar to example 1, at the first fork, the backtracking algorithm picks one of the paths to go down, say the left one, and continues until it reaches another fork or the end
+ - in the left path, the algorithm encounters another fork at level 4 of the decision tree
+ - lets say it goes down the left path again. in this path, there are no more forks and therefore it reaches the end and we get a valid combination of parentheses. 
+ - everytime the algorithm reaches the end in one branch, it will backtrack to the latest fork in the road, which will be the one at level 4 and not the one at level 2. 
+ - since we went down the left path already, that leaves the right path as the only choice
+ - the same thing happens and we reach the end of the branch and we backtrack to the latest fork. since the fork at level 4 has all of its options visited, we will visit one fork up at level 2
+ - visiting the right branch of the fork at level 2 this time, we immediately meet another fork
+ - assuming we take the left branch, we meet another fork and continue taking the left branch again
+ - and this continues until the end and we backtrack to the latest branch and take the other path
+ - this pattern continues until all branches are visited fully
+
 ## Code
 ```python
 def generateParenthesis(n):
