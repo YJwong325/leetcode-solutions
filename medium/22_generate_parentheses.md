@@ -22,7 +22,7 @@ A good analogy to understand the backtracking algorithm further would be to imag
 The **reason** we need backtracking to solve this problem is because we **wish to find all possible combinations** of the numerous pairs of parentheses. Since we already defined concrete rules earlier, we essentially created our own "*forks in the road*", which allows us to make decisions, determine when we reach an end just like how a "*road*" has reached the end, and undo our choices to go back to a previous "*fork in the road*".
 
 ## Example 1:
-Given `n = 2`
+Given `n = 2`, below we have the entire decision tree for all possible combinations for `2 pairs` of parentheses.
 
 ```mermaid
 flowchart TD
@@ -44,8 +44,15 @@ flowchart TD
     lvl4_node2 -->|"add ')'"| lvl5_node2
 ```
 
+ - we can see that the decision tree split into two parts after the first open parenthesis was added
+ - the backtracking solution works by choosing one of the paths to take. lets say the algorithm chooses to take the left part to add a closed parenthesis first.
+ - then it continues down the tree and since there are no more "forks" it ends up at a valid combination where 2 pairs of parentheses are used
+ - at the very end, no more open parentheses can be added so the program backtracks all the way to the first fork we encountered in level 2
+ - since we have already visited the left branch, that leaves only the right branch unvisited. The same process occurs until the end and another valid combination of 2 pairs of parentheses is obtained and the program ends because there are no more unvisited "forks
+ " 
+
 ## Example 2:
-Given `n = 3`
+Given `n = 3`, below we have the entire decision tree for all possible combinations for `3 pairs` of parentheses.
 
 ```mermaid
 flowchart TD
