@@ -28,6 +28,16 @@ A **stack** data structure will be used to keep track of the valid combination o
 ## Example 1:
 Given `n = 2`, below we have the entire decision tree for all possible combinations for `2 pairs` of parentheses.
 
+We start with an empty string and build the empty string up to valid combinations of parentheses. Since we cannot start with a closed parentheses, the only possible choice here is to add an open parentheses. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+```
+
 ```mermaid
 flowchart TD
     lvl1_node1(("''"))
