@@ -8,7 +8,7 @@ Given a number, `n`, we would need to generate all possible combinations of `n` 
 2. Closed parenthesis cannot be added without a corresponding open parenthesis before it.
 3. Number of open parentheses and closed parentheses cannot exceed `n`.
 
-In order to obey the rules stated above, we need variables to keep track of each number of closed (`closedN`) and open (`openN`) parentheses. While building a valid combination, we can simplify the problem down to 2 decisions. Either we add an open parenthesis, `'('`, or a closed parenthesis, `')'`. We stop adding parentheses when the number of open (`openN`) and closed (`closedN`) parentheses are equal to `n`. These decisions can be further elaborated with the following points.
+In order to obey the rules stated above, we need variables to keep track of each number of closed (`closedN`) and open (`openN`) parentheses. While building a valid combination, we can simplify the problem down to 2 decisions. Either we add an open parenthesis, `'('`, or a closed parenthesis, `')'`. We stop adding parentheses when the number of open (`openN`) and closed (`closedN`) parentheses are equal to `n`. These decisions can be clarified with the following points.
 
 1. An open parenthesis, `'('`, can be added when `openN` is smaller than `n`.
 2. A closed parenthesis, `')'`, can be added when `closedN` is smaller than `openN`.
@@ -21,13 +21,17 @@ A good analogy to understand the backtracking algorithm further would be to imag
 
 The **reason** we need backtracking to solve this problem is because we **wish to find all possible combinations** of the numerous pairs of parentheses. Since we already defined concrete rules earlier, we essentially created our own "*forks in the road*", which allows us to make decisions, determine when we reach an end just like how a "*road*" has reached the end, and undo our choices to go back to a previous "*fork in the road*".
 
+### Data structure
+A **stack** data structure will be used to keep track of the valid combination of parentheses as we build our combinations. Since we would need to remove additions of parentheses when we backtrack to an earlier "fork", we can just pop from the stack as it removes the latest addition. To backtrack to an earlier "fork" the algorithm continues popping from the stack, constantly checking at every pop if another path can be taken. 
+
+
 ## Example 1:
 Given `n = 2`, below we have the entire decision tree for all possible combinations for `2 pairs` of parentheses.
 
 ```mermaid
 flowchart TD
     lvl1_node1(("''"))
-    lvl2_node2(("'('"))
+    lvl2_node1(("'('"))
     lvl3_node1(("'()'"))
     lvl3_node2(("'(('"))
     lvl4_node1(("'()('"))
@@ -35,9 +39,9 @@ flowchart TD
     lvl5_node1(("'()()'"))
     lvl5_node2(("'(())'"))
 
-    lvl1_node1 -->|"add '('"| lvl2_node2
-    lvl2_node2 -->|"add ')'"| lvl3_node1
-    lvl2_node2 -->|"add '('"| lvl3_node2
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
     lvl3_node1 -->|"add '('"| lvl4_node1
     lvl3_node2 -->|"add ')'"| lvl4_node2
     lvl4_node1 -->|"add ')'"| lvl5_node1
