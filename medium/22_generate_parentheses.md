@@ -26,7 +26,7 @@ A **stack** data structure will be used to keep track of the valid combination o
 
 
 ## Example 1:
-Given `n = 2`, below we have the entire decision tree for all possible combinations for `2 pairs` of parentheses.
+Given `n = 2`, below we have the entire decision tree for all possible combinations for `2 pairs` of parentheses. The maximum number of open parentheses is 2, and the maximum number of closed parentheses is 2.
 
 We start with an empty string and build the empty string up to valid combinations of parentheses. Since we cannot start with a closed parentheses, the only possible choice here is to add an open parentheses. 
 
@@ -38,32 +38,105 @@ flowchart TD
     lvl1_node1 -->|"add '('"| lvl2_node1
 ```
 
+Now we have the option to add either an open or a closed parenthesis. Since we have 2 different options to choose from, we have reached a "fork". We can choose to go down one of the paths, and mark the other choice to return to at a later stage. 
+
 ```mermaid
 flowchart TD
     lvl1_node1(("''"))
     lvl2_node1(("'('"))
     lvl3_node1(("'()'"))
     lvl3_node2(("'(('"))
-    lvl4_node1(("'()('"))
     lvl4_node2(("'(()'"))
-    lvl5_node1(("'()()'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+```
+
+In this example, we chose to continue down the path that added another open parenthesis. Since the number of open parentheses have reached the maximum for this example, the only choice available here is to add a closed parentheses and continue adding until we reach the maximum number of closed parentheses allowed.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
     lvl5_node2(("'(())'"))
 
     lvl1_node1 -->|"add '('"| lvl2_node1
     lvl2_node1 -->|"add ')'"| lvl3_node1
     lvl2_node1 -->|"add '('"| lvl3_node2
-    lvl3_node1 -->|"add '('"| lvl4_node1
     lvl3_node2 -->|"add ')'"| lvl4_node2
-    lvl4_node1 -->|"add ')'"| lvl5_node1
     lvl4_node2 -->|"add ')'"| lvl5_node2
 ```
 
- - we can see that the decision tree split into two parts after the first open parenthesis was added
- - the backtracking solution works by choosing one of the paths to take. lets say the algorithm chooses to take the left part to add a closed parenthesis first.
- - then it continues down the tree and since there are no more "forks" it ends up at a valid combination where 2 pairs of parentheses are used
- - at the very end, no more open parentheses can be added so the program backtracks all the way to the first fork we encountered in level 2
- - since we have already visited the left branch, that leaves only the right branch unvisited. The same process occurs until the end and another valid combination of 2 pairs of parentheses is obtained and the program ends because there are no more unvisited "forks
- " 
+A valid combination of parentheses is obtained, which will be appended into an array that contains all possible valid combinations of parentheses. 
+
+No more parentheses can be added in the string anymore, which means we need to backtrack to a previous "fork", checking at each node if there are any unvisited decision paths. As we go up the tree, we pop from the stack that holds the current combination of parentheses.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl5_node2(("'(())'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl4_node2 -->|"add ')'"| lvl5_node2
+```
+
+There is an unvisited decision path at level 2 of the tree, where a closing parenthesis could be added instead of the open parenthesis we added earlier. 
+
+After adding the closing parenthesis, the only choice available would be to add an open parenthesis. This is because a closed parenthesis can only be added if there is an open parenthesis without a corresponding closed parenthesis.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl5_node2(("'(())'"))
+    lvl4_node1(("'()('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl4_node2 -->|"add ')'"| lvl5_node2
+    lvl3_node1 -->|"add '('"| lvl4_node1
+```
+
+The number of open parentheses used have reached the maximum, which leaves a single closed parenthesis left to add to the combination.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl5_node2(("'(())'"))
+    lvl4_node1(("'()('"))
+    lvl5_node1(("'()()'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl4_node2 -->|"add ')'"| lvl5_node2
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+```
+
+Another valid combination of parentheses is obtained, which will be appended into the array that contains all possible valid combinations of parentheses. Since there are no more unvisited decision branches/paths, the result array containing all the valid parentheses combinations is returned. In this case, the array is `['(())', '()()']`.
 
 ## Example 2:
 Given `n = 3`, below we have the entire decision tree for all possible combinations for `3 pairs` of parentheses.
