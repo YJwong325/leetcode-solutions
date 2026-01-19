@@ -26,9 +26,9 @@ A **stack** data structure will be used to keep track of the valid combination o
 
 
 ## Example 1:
-Given `n = 2`, below we have the entire decision tree for all possible combinations for `2 pairs` of parentheses. The maximum number of open parentheses is 2, and the maximum number of closed parentheses is 2.
+Given `n = 2`, the maximum number of open parentheses is 2, and the maximum number of closed parentheses is 2.
 
-We start with an empty string and build the empty string up to valid combinations of parentheses. Since we cannot start with a closed parentheses, the only possible choice here is to add an open parentheses. 
+We start with an empty string and build the empty string up to valid combinations of parentheses. Since we cannot start with a closed parentheses, the only possible choice here is to add an open parenthesis. 
 
 ```mermaid
 flowchart TD
@@ -139,7 +139,19 @@ flowchart TD
 Another valid combination of parentheses is obtained, which will be appended into the array that contains all possible valid combinations of parentheses. Since there are no more unvisited decision branches/paths, the result array containing all the valid parentheses combinations is returned. In this case, the array is `['(())', '()()']`.
 
 ## Example 2:
-Given `n = 3`, below we have the entire decision tree for all possible combinations for `3 pairs` of parentheses.
+Given `n = 3`, the maximum number of open parentheses is 3, and the maximum number of closed parentheses is 3.
+
+We start with an empty string and build the empty string up to valid combinations of parentheses. Since we cannot start with a closed parentheses, the only possible choice here is to add an open parenthesis. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+```
+
+Now we have the option to add either an open or a closed parenthesis. Since we have 2 different options to choose from, we have reached a "fork". We can choose to go down one of the paths, and mark the other choice to return to at a later stage. 
 
 ```mermaid
 flowchart TD
@@ -147,21 +159,40 @@ flowchart TD
     lvl2_node1(("'('"))
     lvl3_node1(("'()'"))
     lvl3_node2(("'(('"))
-    lvl4_node1(("'()('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+```
+
+In this example, we chose to continue down the path that added another open parenthesis. In this path, we have the option to either add a closed parenthesis or an open parenthesis because we have not reached the maximum number of open parentheses yet. Thus, arriving at another "fork".
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
     lvl4_node2(("'(()'"))
     lvl4_node3(("'((('"))
-    lvl5_node1(("'()()'"))
-    lvl5_node2(("'()(('"))
-    lvl6_node1(("'()()('"))
-    lvl7_node1(("'()()()'"))
-    lvl6_node2(("'()(()'"))
-    lvl7_node2(("'()(())'"))
-    lvl5_node3(("'(()('"))
-    lvl5_node4(("'(())'"))
-    lvl6_node3(("'(()()'"))
-    lvl7_node3(("'(()())'"))
-    lvl6_node4(("'(())('"))
-    lvl7_node4(("'(())()'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+```
+
+In this fork, we chose to follow the path that adds another open parenthesis again. However, this time, the number of open parentheses in the combination has reached the maximum, so only closed parentheses are left to be added.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
     lvl5_node5(("'((()'"))
     lvl6_node5(("'((())'"))
     lvl7_node5(("'((()))'"))
@@ -169,37 +200,422 @@ flowchart TD
     lvl1_node1 -->|"add '('"| lvl2_node1
     lvl2_node1 -->|"add ')'"| lvl3_node1
     lvl2_node1 -->|"add '('"| lvl3_node2
-    lvl3_node1 -->|"add '('"| lvl4_node1
     lvl3_node2 -->|"add ')'"| lvl4_node2
     lvl3_node2 -->|"add '('"| lvl4_node3
-    lvl4_node1 -->|"add ')'"| lvl5_node1
-    lvl4_node1 -->|"add '('"| lvl5_node2
-    lvl5_node1 -->|"add '('"| lvl6_node1
-    lvl6_node1 -->|"add ')'"| lvl7_node1
-    lvl5_node2 -->|"add ')'"| lvl6_node2
-    lvl6_node2 -->|"add ')'"| lvl7_node2
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+```
+
+A valid combination of parentheses is obtained, which will be appended into an array that contains all possible valid combinations of parentheses. 
+
+No more parentheses can be added in the string anymore, which means we need to backtrack to a previous "fork", checking at each node if there are any unvisited decision paths. As we go up the tree, we pop from the stack that holds the current combination of parentheses.
+
+There is an unvisited decision path at level 3 of the tree, where a closing parenthesis could be added instead of the open parenthesis we added earlier. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+```
+
+After adding the closing parenthesis, we reach yet another "fork". A closed parenthesis can be added here because there is an open parenthesis without a corresponding closed parenthesis.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+```
+
+In this fork, we chose to follow the path that adds an open parenthesis. However, this time, the number of open parentheses in the combination has reached the maximum, so only closed parentheses are left to be added.
+
+After adding 2 closed parentheses, we reached another valid combination, which is appended into a result array containing the other valid combinations of parentheses.
+
+Similar to the earlier valid combination, we need to backtrack to a previous "fork", checking at each node if there are any unvisited decision paths. As we go up the tree, we pop from the stack that holds the current combination of parentheses. From this, we can establish a pattern here that after every valid combination is obtained, we would need to start backtracking. The program ends when we reach the initial empty state, which tells us that there are no longer any more unvisited decision paths in the entire tree.
+
+There is an unvisited decision path at level 4 of the tree, where a closing parenthesis could be added instead of the open parenthesis we added earlier. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+```
+
+Here, we are only able to add an open parenthesis because there are no open parentheses without their corresponding closed parentheses. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
     lvl4_node2 -->|"add '('"| lvl5_node3
     lvl4_node2 -->|"add ')'"| lvl5_node4
     lvl5_node3 -->|"add ')'"| lvl6_node3
     lvl6_node3 -->|"add ')'"| lvl7_node3
     lvl5_node4 -->|"add '('"| lvl6_node4
     lvl6_node4 -->|"add ')'"| lvl7_node4
+```
+
+After adding the open parenthesis, the total number of open parentheses in the combination reached the maximum, leaving the choice of adding a closed parenthesis as the only option available. 
+
+We reached another valid combination that is appended into a result array containing other valid combinations of parentheses.
+
+We will now backtrack to a previous "fork", checking at each node if there are any unvisited decision paths. As we go up the tree, we pop from the stack that holds the current combination of parentheses. 
+
+There is an unvisited decision path at level 2 of the tree, where a closing parenthesis could be added instead of the open parenthesis we added earlier. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
     lvl4_node3 -->|"add ')'"| lvl5_node5
     lvl5_node5 -->|"add ')'"| lvl6_node5
     lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
 ```
 
- - in this example, we see a total of 4 forks in the whole decision tree
- - similar to example 1, at the first fork, the backtracking algorithm picks one of the paths to go down, say the left one, and continues until it reaches another fork or the end
- - in the left path, the algorithm encounters another fork at level 4 of the decision tree
- - lets say it goes down the left path again. in this path, there are no more forks and therefore it reaches the end and we get a valid combination of parentheses. 
- - everytime the algorithm reaches the end in one branch, it will backtrack to the latest fork in the road, which will be the one at level 4 and not the one at level 2. 
- - since we went down the left path already, that leaves the right path as the only choice
- - the same thing happens and we reach the end of the branch and we backtrack to the latest fork. since the fork at level 4 has all of its options visited, we will visit one fork up at level 2
- - visiting the right branch of the fork at level 2 this time, we immediately meet another fork
- - assuming we take the left branch, we meet another fork and continue taking the left branch again
- - and this continues until the end and we backtrack to the latest branch and take the other path
- - this pattern continues until all branches are visited fully
+Again, we are only able to add an open parenthesis because there are no open parentheses without their corresponding closed parentheses. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+    lvl4_node1(("'()('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
+    lvl3_node1 -->|"add '('"| lvl4_node1
+```
+
+After adding the open parenthesis, we reach yet another "fork".
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+    lvl4_node1(("'()('"))
+    lvl5_node1(("'()()'"))
+    lvl5_node2(("'()(('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+    lvl4_node1 -->|"add '('"| lvl5_node2
+```
+
+In this fork, we chose to follow the path that adds an open parenthesis. However, this time, the number of open parentheses in the combination has reached the maximum, so only closed parentheses are left to be added.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+    lvl4_node1(("'()('"))
+    lvl5_node1(("'()()'"))
+    lvl5_node2(("'()(('"))
+    lvl6_node2(("'()(()'"))
+    lvl7_node2(("'()(())'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+    lvl4_node1 -->|"add '('"| lvl5_node2
+    lvl5_node2 -->|"add ')'"| lvl6_node2
+    lvl6_node2 -->|"add ')'"| lvl7_node2
+```
+
+Another valid combination of parentheses is obtained, which will be appended into the result array that contains all other possible valid combinations of parentheses. 
+
+Now we perform the final backtrack, checking at each node if there are any unvisited decision paths. As we go up the tree, we pop from the stack that holds the current combination of parentheses. 
+
+There is an unvisited decision path at level 4 node 1 of the tree, where a closing parenthesis could be added instead of the open parenthesis we added earlier. 
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+    lvl4_node1(("'()('"))
+    lvl5_node1(("'()()'"))
+    lvl5_node2(("'()(('"))
+    lvl6_node2(("'()(()'"))
+    lvl7_node2(("'()(())'"))
+    lvl6_node1(("'()()('"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+    lvl4_node1 -->|"add '('"| lvl5_node2
+    lvl5_node2 -->|"add ')'"| lvl6_node2
+    lvl6_node2 -->|"add ')'"| lvl7_node2
+    lvl5_node1 -->|"add '('"| lvl6_node1
+```
+
+Again, we are only able to add an open parenthesis because there are no open parentheses without their corresponding closed parentheses. The number of open parentheses in the combination has reached the maximum, so only closed parentheses are left to be added.
+
+```mermaid
+flowchart TD
+    lvl1_node1(("''"))
+    lvl2_node1(("'('"))
+    lvl3_node1(("'()'"))
+    lvl3_node2(("'(('"))
+    lvl4_node2(("'(()'"))
+    lvl4_node3(("'((('"))
+    lvl5_node5(("'((()'"))
+    lvl6_node5(("'((())'"))
+    lvl7_node5(("'((()))'"))
+    lvl5_node3(("'(()('"))
+    lvl5_node4(("'(())'"))
+    lvl6_node3(("'(()()'"))
+    lvl7_node3(("'(()())'"))
+    lvl6_node4(("'(())('"))
+    lvl7_node4(("'(())()'"))
+    lvl4_node1(("'()('"))
+    lvl5_node1(("'()()'"))
+    lvl5_node2(("'()(('"))
+    lvl6_node2(("'()(()'"))
+    lvl7_node2(("'()(())'"))
+    lvl6_node1(("'()()('"))
+    lvl7_node1(("'()()()'"))
+
+    lvl1_node1 -->|"add '('"| lvl2_node1
+    lvl2_node1 -->|"add ')'"| lvl3_node1
+    lvl2_node1 -->|"add '('"| lvl3_node2
+    lvl3_node2 -->|"add ')'"| lvl4_node2
+    lvl3_node2 -->|"add '('"| lvl4_node3
+    lvl4_node3 -->|"add ')'"| lvl5_node5
+    lvl5_node5 -->|"add ')'"| lvl6_node5
+    lvl6_node5 -->|"add ')'"| lvl7_node5
+    lvl4_node2 -->|"add '('"| lvl5_node3
+    lvl4_node2 -->|"add ')'"| lvl5_node4
+    lvl5_node3 -->|"add ')'"| lvl6_node3
+    lvl6_node3 -->|"add ')'"| lvl7_node3
+    lvl5_node4 -->|"add '('"| lvl6_node4
+    lvl6_node4 -->|"add ')'"| lvl7_node4
+    lvl3_node1 -->|"add '('"| lvl4_node1
+    lvl4_node1 -->|"add ')'"| lvl5_node1
+    lvl4_node1 -->|"add '('"| lvl5_node2
+    lvl5_node2 -->|"add ')'"| lvl6_node2
+    lvl6_node2 -->|"add ')'"| lvl7_node2
+    lvl5_node1 -->|"add '('"| lvl6_node1
+    lvl6_node1 -->|"add ')'"| lvl7_node1
+```
+
+Another valid combination is obtained and appended to the result array containing all other valid combinations. Since there are no more unvisited decision branches/paths, the result array containing all the valid parentheses combinations is returned. In this case, the array is `['((()))', '(()())', '(())()', '()(())', '()()()']`.
 
 ## Code
 ```python
