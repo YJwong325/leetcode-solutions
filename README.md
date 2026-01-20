@@ -23,8 +23,6 @@ Each solution includes example test cases that can be executed directly to print
 4. The code and logic for a solution are only written when I have understood the approach to solving each problem.
 5. No part of this repository was copied from others. 
 
-This repo is simply an archive for me to share my progress and improve on my programming abilities in an organized way.
+#### This repo is simply an archive for me to share my progress and improve on my programming abilities in an organized way.
 
----
-
-Link to my [LeetCode](https://leetcode.com/u/yjwong1911/) profile.
+> Link to my [LeetCode](https://leetcode.com/u/yjwong1911/) profile.
