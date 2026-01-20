@@ -1,6 +1,6 @@
 # Yuan Jie's LeetCode Solutions
 Every leetcode problem that I have learned and solved are documented here. 
-Most of the solutions here are inspired by public resources like [NeetCode](https://www.youtube.com/@NeetCode), which I use to grasp new concepts that are unfamiliar to me. 
+Most of the solutions here are inspired by online tutorials and explanations from creators like [NeetCode](https://www.youtube.com/@NeetCode), which help me grasp new concepts that are unfamiliar to me. 
 
 ## Python code snippets (.py)
 Each solution includes example test cases that can be executed directly to print the results in the console.
@@ -13,12 +13,12 @@ Each solution includes example test cases that can be executed directly to print
 
 ## Approach
 - Try to solve each problem by myself before searching for help
-- Use public resources like [NeetCode](https://www.youtube.com/@NeetCode) to learn new concepts and the most efficient ways to solve each problem
+- Use online tutorials and explanations from creators like [NeetCode](https://www.youtube.com/@NeetCode) to learn new concepts and the most efficient ways to solve each problem
 - Reapply the new knowledge gained from their approaches to write the optimal solution in my own words
 
 ## Disclaimer
 1. I do not claim ownership of the problems, algorithms, and logical ideas behind the solutions in this repository.
-2. All code in this repository is written by me, even when referring to outside resources to learn.
+2. All code in this repository is written by me, even when referring to external resources to learn.
 3. All media used, including GIFs, are created by me by combining many static images of my diagrams together.
 4. The code and logic for a solution are only written when I have understood the approach to solving each problem.
 5. No part of this repository was copied from others. 
