@@ -1,6 +1,9 @@
 # LeetCode 22: Generate Parentheses
 [Problem statement on LeetCode](https://leetcode.com/problems/generate-parentheses/)
 
+**Author:** Yuan Jie Wong  
+**Last Updated:** 2026-01-19
+
 ## Approach
 Given a number, `n`, we would need to generate all possible combinations of `n` parentheses pairs. Correct combinations follow the following rules:
 

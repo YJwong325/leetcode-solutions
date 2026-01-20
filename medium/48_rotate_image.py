@@ -1,3 +1,6 @@
+# Author: Yuan Jie Wong
+# Last Updated: 2025-05-16
+
 def rotate(matrix):
     n = len(matrix)
 

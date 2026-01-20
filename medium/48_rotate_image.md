@@ -1,6 +1,9 @@
 # LeetCode 48: Rotate Image
 [Problem statement on LeetCode](https://leetcode.com/problems/rotate-image/)
 
+**Author:** Yuan Jie Wong  
+**Last Updated:** 2026-01-01
+
 ## Approach
 
 Split the process of rotating the matrix in the clockwise direction by 90° in 2 distinct steps. The first is to iterate through the whole matrix row by row and get the transpose of the matrix. Then, reflect the matrix about the center vertical line. 

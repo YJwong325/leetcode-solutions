@@ -1,3 +1,6 @@
+# Author: Yuan Jie Wong
+# Last Updated: 2025-05-20
+
 def maxProfit(self, prices):
     l = 0
     r = 1

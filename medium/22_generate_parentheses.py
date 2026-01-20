@@ -1,3 +1,6 @@
+# Author: Yuan Jie Wong
+# Last Updated: 2025-12-22
+
 def generateParenthesis(n):
     stack = []
     res = []

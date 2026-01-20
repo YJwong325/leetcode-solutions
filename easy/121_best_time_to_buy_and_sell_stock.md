@@ -1,6 +1,8 @@
 # LeetCode 121: Best Time to Buy and Sell Stock
-
 [Problem statement on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+
+**Author:** Yuan Jie Wong  
+**Last Updated:** 2025-06-05
 
 ## Approach
 

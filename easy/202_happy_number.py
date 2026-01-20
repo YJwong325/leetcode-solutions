@@ -1,3 +1,6 @@
+# Author: Yuan Jie Wong
+# Last Updated: 2025-05-14
+
 # Normal method without memoization
 def isHappy(n):
     def sumOfDigitsSquared(n):

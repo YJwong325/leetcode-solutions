@@ -1,6 +1,9 @@
 # LeetCode 202: Happy Number
 [Problem statement on LeetCode](https://leetcode.com/problems/happy-number/)
 
+**Author:** Yuan Jie Wong  
+**Last Updated:** 2025-10-17
+
 ## Approach
 Keep calculating the sum of the squares of all digits and check if it eventually reaches 1.
 If the sum of the squares results in a number that has been reached before, then the number is not happy because the number will loop infinitely without ever reaching 1. 

@@ -1,3 +1,6 @@
+# Author: Yuan Jie Wong
+# Last Updated: 2025-09-17
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val

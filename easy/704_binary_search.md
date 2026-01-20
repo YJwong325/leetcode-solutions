@@ -1,6 +1,9 @@
 # LeetCode 704: Binary Search
 [Problem statement on LeetCode](https://leetcode.com/problems/binary-search/)
 
+**Author:** Yuan Jie Wong  
+**Last Updated:** 2026-01-02
+
 ## Approach
 Binary search is a process that involves halving the search space every iteration to search for a target in a list of elements. It is quicker than linear search, but it does require the list of elements to be sorted. If we know that the list of elements that contains our target element is sorted, binary search is the fastest method to search for the target element. 
 

@@ -1,3 +1,6 @@
+# Author: Yuan Jie Wong
+# Last Updated: 2025-12-18
+
 def binary_search(nums, target):
     l, r = 0, len(nums) - 1
 
