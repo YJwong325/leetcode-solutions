@@ -2,10 +2,10 @@
 [Problem statement on LeetCode](https://leetcode.com/problems/merge-k-sorted-lists/)
 
 **Author:** Yuan Jie Wong  
-**Last Updated:** 2026-01-01
+**Last Updated:** 2026-03-01
 
 ## Approach
-The problem involves joining multiple linked lists into one huge linked list in ascending order. A solution we can use is a divide and conquer method to simplify the problem so that we can solve it one small part at a time. The approach involves merging 2 small linked lists at a time and joining them in ascending order. Once we are able to join 2 linked lists together, we would be able to eventually join all the linked lists given by the problem with multiple iterations.
+The problem involves joining multiple linked lists into one huge linked list in ascending order. A solution we can use is a divide and conquer method to simplify the problem so that we can solve it one small part at a time. The approach involves merging 2 small linked lists at a time by arranging nodes with values in ascending order. Once we are able to join 2 linked lists together, we would be able to eventually join all the linked lists given by the problem with multiple iterations.
 
 ### Part 1: Joining 2 Linked Lists
 
@@ -47,7 +47,7 @@ flowchart LR
 
 The circular nodes represent pointers that are pointing to specific nodes in the linked lists. These pointers can change the next pointer of the nodes they reference.
 
-Since we want to merge the linked lists in ascending order, we will have to pick the lower value when deciding which node to add to the <u>new linked list? (change to merged linked list or what)</u>. Between the two starting nodes, we have the values:
+The two lists, list1 and list2, will be merged together with nodes in ascending order, and a new linked list will be created as a result. Since we want to merge the linked lists in ascending order, we will have to pick the node with the lower value when deciding which node to add to the new linked list. Between the two starting nodes, we have the values:
 
 $$
 \texttt{list1.val = 1} \qquad | \qquad \texttt{list2.val = 2}
